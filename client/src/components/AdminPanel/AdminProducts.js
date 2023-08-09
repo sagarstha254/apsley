@@ -62,11 +62,14 @@ export default function AdminProducts() {
       price: price,
       image: image,
     };
-
+    const token = localStorage.getItem("token");
     try {
       const response = await fetch("http://localhost:8081/admin/product", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`,
+        },
         body: JSON.stringify(userData),
       });
 
@@ -141,7 +144,9 @@ export default function AdminProducts() {
               productList.map((i) => {
                 return (
                   <tr>
-                    <td><img src={i.image}/></td>
+                    <td>
+                      <img src={i.image} />
+                    </td>
                     <td>{i.name}</td>
                     <td>{i.price}</td>
                     <td>{i.description}</td>
