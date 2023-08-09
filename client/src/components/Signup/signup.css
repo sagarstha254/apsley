@@ -1,0 +1,57 @@
+/* Signup.css */
+
+.signupcontainer {
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    padding: 90px 10px;
+    width: 100%;
+    background-color: rgb(101, 167, 218);
+  }
+  
+  .signupform {
+    display: flex;
+    flex-direction: column; /* Stacking form elements vertically */
+    align-items: center;
+    height: auto;
+    width: 30%;
+    box-shadow: 1px 2px 3px 2px rgb(207, 207, 207);
+    padding-top: 30px;
+    border-radius: 4px;
+    background-color: #ffffff; /* White background */
+  }
+  
+  .formgroup {
+    margin-top: 15px; /* Reduce the margin between form elements */
+    margin-bottom: 10px;
+    text-align: left;
+    width: 80%; /* Adjust the width of form elements */
+  }
+  
+  label {
+    display: block;
+    font-weight: bold; /* Make labels bold */
+    margin-bottom: 5px; /* Add some spacing between label and input */
+  }
+  
+  input,
+  select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  /* Style the select dropdown */
+  select {
+    cursor: pointer;
+  }
+  
+  .submitbutton {
+    background-color: #007bff; /* Use a blue color for the button */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  }  

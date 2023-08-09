@@ -1,0 +1,31 @@
+.productContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .product {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    width: 200px;
+  }
+
+  .product h1 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .product p {
+    margin-bottom: 10px;
+  }
+
+  .product img {
+    margin-bottom: 10px;
+  }
+
+  .product a {
+    display: block;
+  }

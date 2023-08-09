@@ -1,0 +1,104 @@
+.cointainer{
+    max-width: 1200px;
+    padding: 2rem;
+    margin: 0 auto;
+  
+}
+
+.adminproduct form{
+
+    max-width: 40rem;
+    margin:0 auto;
+    padding: 2rem;
+    border-radius: .5rem;
+   background-color:#999999
+}
+.adminproduct form h3{
+    text-transform: uppercase;
+    color: black;
+    margin-bottom: 1rem;
+    text-align:center ;
+}
+
+.adminproduct form .box{
+    width: 80%;
+    border-radius: .5rem;
+    padding: 1.2rem 1.5rem;
+    font-size: 1.7rem;
+    margin: 1rem 0;
+    background-color: white;
+    text-transform: none;
+}
+
+.btn{
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    border-radius: .5rem;
+    margin-top: 1rem;
+    font-size: 1.7rem;
+    padding: 1rem 3rem;
+    background-color: green;
+    color: white;
+}
+
+.btn:hover{
+    background: black;
+}
+
+.productdisplay{
+    margin: 2rem 0;
+    overflow-y: scroll;
+}
+
+
+.productdisplay .productdisplaytable{
+    width: 100%;
+    text-align: center;
+}
+
+.productdisplay .productdisplaytable thead{
+    padding: 1rem;
+    font-size: 1.5rem;
+    background: #999999
+}
+
+.productdisplay .productdisplaytable td{
+    padding: 1rem;
+    font-size:1.5rem;
+   
+}
+
+
+
+.editbtn {
+   
+    display: block;
+    width: 40%;
+    height: 20px;
+    cursor: pointer;
+    border-radius: .5rem;
+    margin-top: 0.3rem;
+    font-size: 1.7rem;
+    padding: 1rem 3rem;
+    background-color: green;
+    color: white;
+}
+    .delbtn{
+        
+    display: block;
+    width: 40%;
+    height: 20px;
+    cursor: pointer;
+    border-radius: .5rem;
+    margin-top: 0.3rem;
+    font-size: 1.7rem;
+    padding: 1rem 3rem;
+    background-color:red;
+    color: white;
+    }
+
+
+
+
+

@@ -1,0 +1,37 @@
+  .adminNav {
+    display: flex;
+    align-items: center;
+  }
+  
+  .adminNav img {
+    height: 80px;
+  }
+  
+  .adminNav ul {
+    
+    list-style: none;
+  }
+
+  .navTitle{
+    
+    display: flex;
+    position: relative;
+    top: 1%;
+    left: 27%;
+  }
+  
+  .adminNav ul li a {
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    background-color: #DAE952;
+    padding: 10px 10px;;
+    color: #333;
+    border: none;
+    border-radius: 10px;
+    width: 155.311px;
+    height: 40px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+  }

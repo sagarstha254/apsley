@@ -1,0 +1,98 @@
+.h1{
+    margin: 4rem 6rem;
+}
+.reservation{
+    margin: 4rem 6rem;
+}
+.reservation h1{
+    font-size:  3rem;
+}
+.reserve{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+.text{
+    width: 55%;
+    text-align: start;
+    font-size: 1.1rem;
+}
+.text h2{
+    padding-bottom: 1rem;
+}
+.image{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    z-index: -99;
+    margin: 1.9rem;
+}
+.image img{
+    width: 80%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: -1px 1px 62px -18px rgba(0,0,0,0.19);
+    margin-top: 4rem;
+}
+.button{
+    width: 140px;
+    height: 30px;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    box-shadow: inset 2px 2px 2px 0px rgba(255,255,255,.5),
+     7px 7px 20px 0px rgba(0,0,0,.1),
+     4px 4px 5px 0px rgba(0,0,0,.1);
+    outline: none;
+    font-size: 15px;
+  }
+  
+  .button{
+    background: #004dff;
+    background: linear-gradient(0deg, #004dff 0%, #004dff 100%);
+    border: none;
+  }
+  
+  .button:before {
+    height: 0%;
+    width: 2px;
+  }
+  
+  .button:hover {
+    box-shadow: 4px 4px 6px 0 rgba(255,255,255,.5),
+                -4px -4px 6px 0 rgba(116, 125, 136, .5), 
+      inset -4px -4px 6px 0 rgba(255,255,255,.2),
+      inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
+  }
+  
+@media screen and (max-width: 850px){
+    .reservation{
+        margin: 4rem 2rem;
+    }
+    .reserve{
+        display: flex;
+        flex-direction: column-reverse;
+        margin-top: 2.5rem;
+    }
+    .text{
+        width: 100%;
+    }
+    .image{
+        width: 100%;
+    }
+    .image img{
+        height: 250px;
+        margin-top: 0%;
+        margin-bottom: 0%;
+    }
+}
