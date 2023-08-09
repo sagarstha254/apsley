@@ -9,7 +9,7 @@ const router = express.Router();
 // Create new product
 router.post(
   "/admin/product",
-  // isAuth(["admin"]),
+  isAuth(["admin"]),
   upload.single("productImage"),
   productController.postProduct
 );
