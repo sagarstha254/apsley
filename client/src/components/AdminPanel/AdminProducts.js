@@ -29,11 +29,10 @@ export default function AdminProducts() {
       });
 
       const data = await response.json();
-      console.log(data);
       setMessage(data.message);
+      // Update the productList state with the newly added product
+      setProductList((prevProductList) => [...prevProductList, userData]);
 
-      // Reload the page after updating the product
-      window.location.reload();
     } catch (error) {
       console.error(error);
     }
@@ -61,9 +60,13 @@ export default function AdminProducts() {
 
       const data = await response.json();
       setMessage(data.message);
-      
-      // Reload the page after updating the product
-      window.location.reload();
+
+      // Update the productList state with the updated product
+      setProductList((prevProductList) =>
+        prevProductList.map((product) =>
+          product._id === id ? { ...product, ...userData } : product
+        )
+      );
     } catch (error) {
       console.error(error);
     }
@@ -79,7 +82,6 @@ export default function AdminProducts() {
       );
 
       const data = await response.json();
-      console.log(data);
       // Remove the deleted product from the productList state
       setProductList((prevProductList) =>
         prevProductList.filter((product) => product._id !== id)
@@ -100,7 +102,6 @@ export default function AdminProducts() {
 
         const data = await response.json();
         setProductList(data.products);
-        console.log(data.message);
       } catch (error) {
         console.error(error);
       }
@@ -170,27 +171,6 @@ export default function AdminProducts() {
             {productList &&
               productList.map((i) => {
                 return (
-<<<<<<< HEAD
-                  <tr>
-                    <td>
-                      <img src={i.image} />
-                    </td>
-                    <td>{i.name}</td>
-                    <td>{i.price}</td>
-                    <td>{i.description}</td>
-                    <td>
-                      <a className={styles.editbtn}>
-                        <i className={styles.edit}></i> Edit
-                      </a>
-                      <a
-                        onClick={() => remove(i._id)}
-                        className={styles.delbtn}
-                      >
-                        <i className={styles.delete}></i> Delete
-                      </a>
-                    </td>
-                  </tr>
-=======
                   <tbody>
                     <tr>
                       <td>
@@ -215,7 +195,6 @@ export default function AdminProducts() {
                       </td>
                     </tr>
                   </tbody>
->>>>>>> eff687b (Edit product, fetch user data, delete user data)
                 );
               })}
           </table>

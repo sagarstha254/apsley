@@ -17,7 +17,6 @@ const AdminCustomerList = () => {
 
         const data = await response.json();
         setUserList(data.users);
-        console.log(data.message);
       } catch (error) {
         console.error(error);
       }
@@ -32,10 +31,11 @@ const AdminCustomerList = () => {
         method: "DELETE",
       });
       const data = await response.json();
+
+      // Update the userList state by filtering out the deleted user
+      setUserList((prevUserList) => prevUserList.filter((user) => user._id !== id));
       setMessage(data.message);
 
-      
-      window.location.reload();
     } catch (error) {
       console.error(error);
     }
