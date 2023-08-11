@@ -14,4 +14,14 @@ router.post("/login", validateLogin, userController.login);
 // Route for user logout
 router.post("/logout", validateLogin, userController.logout);
 
+// Fetch all user
+router.get("/user", userController.getuser);
+
+// Remove a product
+router.delete(
+  "/user/:userId",
+  // isAuth(["admin"]),
+  userController.deleteUser
+);
+
 module.exports = router;

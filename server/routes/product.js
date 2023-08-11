@@ -23,7 +23,7 @@ router.get("/product/:productId", productController.getProduct);
 // Update a product
 router.put(
   "/admin/product/:productId",
-  isAuth(["admin"]),
+  // isAuth(["admin"]),
   upload.single("productImage"),
   productController.updateProduct
 );

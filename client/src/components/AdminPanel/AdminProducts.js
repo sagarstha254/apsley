@@ -10,10 +10,66 @@ export default function AdminProducts() {
   const [message, setMessage] = useState("");
   const [productList, setProductList] = useState([]);
 
+  //Insert a product
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    const userData = {
+      name: name,
+      description: description,
+      price: price,
+      image: image,
+    };
+
+    try {
+      const response = await fetch("http://localhost:8081/admin/product", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(userData),
+      });
+
+      const data = await response.json();
+      console.log(data);
+      setMessage(data.message);
+
+      // Reload the page after updating the product
+      window.location.reload();
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  //Update a product
+  async function update(id) {
+    const userData = {
+      productId: { id },
+      name: name,
+      description: description,
+      price: price,
+      image: image,
+    };
+
+    try {
+      const response = await fetch(
+        `http://localhost:8081/admin/product/${id}`,
+        {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(userData),
+        }
+      );
+
+      const data = await response.json();
+      setMessage(data.message);
+      
+      // Reload the page after updating the product
+      window.location.reload();
+    } catch (error) {
+      console.error(error);
+    }
+  }
   //Delete a product
   async function remove(id) {
-    console.log(id, "delte");
-
     try {
       const response = await fetch(
         `http://localhost:8081/admin/product/${id}`,
@@ -51,35 +107,6 @@ export default function AdminProducts() {
     };
     getProduct();
   }, []);
-
-  //Insert a product
-  async function handleSubmit(e) {
-    e.preventDefault();
-
-    const userData = {
-      name: name,
-      description: description,
-      price: price,
-      image: image,
-    };
-    const token = localStorage.getItem("token");
-    try {
-      const response = await fetch("http://localhost:8081/admin/product", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Authorization": `Bearer ${token}`,
-        },
-        body: JSON.stringify(userData),
-      });
-
-      const data = await response.json();
-      console.log(data);
-      setMessage(data.message);
-    } catch (error) {
-      console.error(error);
-    }
-  }
 
   return (
     <>
@@ -143,6 +170,7 @@ export default function AdminProducts() {
             {productList &&
               productList.map((i) => {
                 return (
+<<<<<<< HEAD
                   <tr>
                     <td>
                       <img src={i.image} />
@@ -162,6 +190,32 @@ export default function AdminProducts() {
                       </a>
                     </td>
                   </tr>
+=======
+                  <tbody>
+                    <tr>
+                      <td>
+                        <img src={i.image} />
+                      </td>
+                      <td>{i.name}</td>
+                      <td>{i.price}</td>
+                      <td>{i.description}</td>
+                      <td>
+                        <a
+                          onClick={() => update(i._id)}
+                          className={styles.editbtn}
+                        >
+                          <i className={styles.edit}></i> Edit
+                        </a>
+                        <a
+                          onClick={() => remove(i._id)}
+                          className={styles.delbtn}
+                        >
+                          <i className={styles.delete}></i> Delete
+                        </a>
+                      </td>
+                    </tr>
+                  </tbody>
+>>>>>>> eff687b (Edit product, fetch user data, delete user data)
                 );
               })}
           </table>
