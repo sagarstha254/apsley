@@ -3,6 +3,7 @@ const { validationResult } = require("express-validator");
 const Room = require("../models/room");
 const errorHandler = require("../middlewares/error-handler");
 const clearImage = require("../utils/clear-image");
+const { connect } = require("mongoose");
 
 // Create new room
 exports.postRoom = async (req, res, next) => {
@@ -13,20 +14,20 @@ exports.postRoom = async (req, res, next) => {
       const errorMessage = errors.array()[0].msg;
       errorHandler(errorMessage, 422);
     }
-    if (!req.file) {
+    if (!req.body.image) {
       errorHandler("No image provided", 422);
     }
 
     // Extract input data
-    const name = req.body.name;
+    const number = req.body.number;
     const description = req.body.description;
     const roomType = req.body.roomType;
     const price = req.body.price;
-    const image = req.file.path;
+    const image = req.body.image;
 
     // Create new room
     const room = new Room({
-      name: name,
+      number: number,
       description: description,
       roomType: roomType,
       price: price,
@@ -35,7 +36,6 @@ exports.postRoom = async (req, res, next) => {
 
     // Save the created room
     const result = await room.save();
-    console.log(result);
 
     // Send response
     res
@@ -96,14 +96,14 @@ exports.updateRoom = async (req, res, next) => {
 
     // Extract input data
     const roomId = req.params.roomId;
-    const name = req.body.name;
+    const number = req.body.number;
     const description = req.body.description;
-    const roomType = req.file.roomType;
+    const roomType = req.body.roomType;
     const price = req.body.price;
     let image = req.body.image;
 
-    if (req.file) {
-      image = req.file.path;
+    if (req.body.image) {
+      image = req.body.image;
     }
     if (!image) {
       errorHandler("No file picked.", 422);

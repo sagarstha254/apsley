@@ -3,37 +3,40 @@ import styles from "./AdminProducts.module.css";
 import AdminNavBar from "./AdminNavBar";
 
 export default function AdminProducts() {
-  const [name, setName] = useState("");
+  const [number, setnumber] = useState("");
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
   const [image, setimage] = useState("");
+  const [roomType, setroomType] = useState("");
   const [message, setMessage] = useState("");
-  const [productList, setProductList] = useState([]);
+  const [roomList, setRoomList] = useState([]);
 
-  //Insert a product
+  //Insert a room data
   async function handleSubmit(e) {
     e.preventDefault();
 
     const userData = {
-      name: name,
+      number: number,
+      roomType: roomType,
       description: description,
       price: price,
       image: image,
     };
-
     const token = localStorage.getItem("token");
     try {
-      const response = await fetch("http://localhost:8081/admin/product", {
+      const response = await fetch("http://localhost:8081/admin/room", {
         method: "POST",
-        headers: { "Content-Type": "application/json" , "Authorization": `Bearer ${token}`},
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`,
+        },
         body: JSON.stringify(userData),
       });
 
       const data = await response.json();
       setMessage(data.message);
       // Update the productList state with the newly added product
-      setProductList((prevProductList) => [...prevProductList, userData]);
-
+      setRoomList((prevroomList) => [...prevroomList, userData]);
     } catch (error) {
       console.error(error);
     }
@@ -42,55 +45,56 @@ export default function AdminProducts() {
   //Update a product
   async function update(id) {
     const userData = {
-      productId: { id },
-      name: name,
+      roomId: { id },
+      number: number,
       description: description,
       price: price,
+      roomType: roomType,
       image: image,
     };
 
     const token = localStorage.getItem("token");
+
     try {
-      const response = await fetch(
-        `http://localhost:8081/admin/product/${id}`,
-        {
-          method: "PUT",
-          headers: { "Content-Type": "application/json", "AuthorizatIon": `Bearer ${token}` ,
+      const response = await fetch(`http://localhost:8081/admin/room/${id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`,
         },
-          body: JSON.stringify(userData),
-        }
-      );
-      console.log("HELLO");
+        body: JSON.stringify(userData),
+      });
 
       const data = await response.json();
       setMessage(data.message);
 
-      // Update the productList state with the updated product
-      setProductList((prevProductList) =>
-        prevProductList.map((product) =>
-          product._id === id ? { ...product, ...userData } : product
+      // Update the roomlist state with the updated room
+      setRoomList((prevroomList) =>
+        prevroomList.map((room) =>
+          room._id === id ? { ...room, ...userData } : room
         )
       );
     } catch (error) {
       console.error(error);
     }
   }
-  //Delete a product
+  //   Delete a product
   async function remove(id) {
     const token = localStorage.getItem("token");
     try {
-      const response = await fetch(
-        `http://localhost:8081/admin/product/${id}`,
-        {
-          method: "DELETE",
-          headers: {"Content-Type":"applicaton/json", "Authorization": `Bearer ${token}`},
-        }
-      );
+      const response = await fetch(`http://localhost:8081/admin/room/${id}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`,
+        },
+      });
 
       const data = await response.json();
+
       // Remove the deleted product from the productList state
-      setProductList((prevProductList) =>
-        prevProductList.filter((product) => product._id !== id)
+      setRoomList((prevroomList) =>
+        prevroomList.filter((room) => room._id !== id)
       );
       setMessage(data.message);
     } catch (error) {
@@ -98,21 +102,21 @@ export default function AdminProducts() {
     }
   }
 
-  //Fetch all products
+  // Fetch all room data
   useEffect(() => {
-    const getProduct = async () => {
+    const getRooms = async () => {
       try {
-        const response = await fetch("http://localhost:8081/products", {
+        const response = await fetch("http://localhost:8081/rooms", {
           method: "GET",
         });
 
         const data = await response.json();
-        setProductList(data.products);
+        setRoomList(data.rooms);
       } catch (error) {
         console.error(error);
       }
     };
-    getProduct();
+    getRooms();
   }, []);
 
   return (
@@ -122,29 +126,36 @@ export default function AdminProducts() {
       <div className={styles.cointainer}>
         <div className={styles.adminproduct}>
           <form onSubmit={handleSubmit} encType="multipart/form-data">
-            <h3>add new products</h3>
+            <h3>add new rooms</h3>
             <h3>{message}</h3>
 
             <input
-              type="text"
-              placeholder="Enter your product name"
-              name="name"
+              type="number"
+              placeholder="Enter your room number"
+              name="number"
               className={styles.box}
-              onChange={(e) => setName(e.target.value)}
+              onChange={(e) => setnumber(e.target.value)}
             ></input>
             <input
               type="number"
-              placeholder="Enter your product price"
+              placeholder="Enter your room price"
               name="price"
               className={styles.box}
               onChange={(e) => setPrice(e.target.value)}
             ></input>
             <input
               type="text"
-              placeholder="Enter your product description"
-              name="description"
+              placeholder="Enter your room type"
+              name="type"
               className={styles.box}
               onChange={(e) => setDescription(e.target.value)}
+            ></input>
+            <input
+              type="text"
+              placeholder="Enter your room description"
+              name="description"
+              className={styles.box}
+              onChange={(e) => setroomType(e.target.value)}
             ></input>
             <input
               type="file"
@@ -156,8 +167,8 @@ export default function AdminProducts() {
             <input
               type="submit"
               className={styles.btn}
-              name="add_products"
-              value="Add product"
+              name="add_room"
+              value="Add Rooms"
             ></input>
           </form>
         </div>
@@ -166,23 +177,25 @@ export default function AdminProducts() {
           <table className={styles.productdisplaytable}>
             <thead>
               <tr>
-                <td>Product image</td>
-                <td>Product Name</td>
-                <td>Product Price</td>
+                <td>Room image</td>
+                <td>Room Number</td>
+                <td>Room Price</td>
+                <td>Room Type</td>
                 <td>Description</td>
                 <td colSpan="2">Action</td>
               </tr>
             </thead>
-            {productList &&
-              productList.map((i) => {
+            {roomList &&
+              roomList.map((i) => {
                 return (
                   <tbody>
                     <tr>
                       <td>
                         <img src={i.image} />
                       </td>
-                      <td>{i.name}</td>
+                      <td>{i.number}</td>
                       <td>{i.price}</td>
+                      <td>{i.roomType}</td>
                       <td>{i.description}</td>
                       <td>
                         <a

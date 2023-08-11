@@ -119,9 +119,10 @@ exports.updateProduct = async (req, res, next) => {
     const description = req.body.description;
     const price = req.body.price;
     let image = req.body.image;
+    console.log(price,"dfa");
 
-    if (req.file) {
-      image = req.file.path;
+    if (req.body.image) {
+      image = req.body.image;
     }
     if (!image) {
       errorHandler("No file picked.", 422);
