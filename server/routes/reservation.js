@@ -8,7 +8,7 @@ const router = express.Router();
 
 router.post(
   "/reservation",
-  isAuth(["user"]),
+  // isAuth(["user"]),
   reservationController.postReservation
 );
 

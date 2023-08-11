@@ -18,6 +18,7 @@ exports.postReservation = async (req, res, next) => {
 
     // Find the user
     const userId = req.userId;
+    console.log(userId,"iddl");
     const user = await User.findById(userId);
     if (!user) {
       errorHandler("User not found.", 404);
