@@ -26,9 +26,12 @@ const AdminCustomerList = () => {
 
   //Delete customer details
   async function remove(id) {
+    const token = localStorage.getItem("token");
+
     try {
       const response = await fetch(`http://localhost:8081/user/${id}`, {
         method: "DELETE",
+        headers: {"Content-Type":"application/jspn", "Authorization":`Bearer ${token}`},
       });
       const data = await response.json();
 

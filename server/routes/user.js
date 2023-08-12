@@ -1,4 +1,5 @@
 const express = require("express");
+const isAuth = require("../middlewares/is-auth");
 
 const userController = require("../controllers/user");
 const { validateSignup, validateLogin } = require("../middlewares/validator");
@@ -17,11 +18,12 @@ router.post("/logout", validateLogin, userController.logout);
 // Fetch all user
 router.get("/user", userController.getuser);
 
-// Remove a product
+// Remove a user
 router.delete(
   "/user/:userId",
-  // isAuth(["admin"]),
+  isAuth(["admin"]),
   userController.deleteUser
 );
+
 
 module.exports = router;

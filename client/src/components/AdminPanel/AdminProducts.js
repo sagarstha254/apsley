@@ -60,7 +60,6 @@ export default function AdminProducts() {
           body: JSON.stringify(userData),
         }
       );
-      console.log("HELLO");
 
       const data = await response.json();
       setMessage(data.message);

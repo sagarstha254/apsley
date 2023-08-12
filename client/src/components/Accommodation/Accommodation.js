@@ -11,7 +11,6 @@ export const Accomodation = () => {
      try {
        const response = await fetch("http://localhost:8081/rooms");
        const responseData = await response.json();
-       console.log(responseData);
        setRooms(responseData.rooms);
      } catch (error) {
        console.error(error);
@@ -42,7 +41,7 @@ export const Accomodation = () => {
               ></img>
               </div>
               </div>
-              <button className={styles.button} onClick={()=>navigate('/reservation')}>Book now</button>
+              <button className={styles.button} onClick={()=>navigate(`/reservation?roomId=${room._id}`)}>Book now</button>
             </div>
           ))
         : "loading"}

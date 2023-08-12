@@ -3,13 +3,16 @@ import styles from "./Reservation.module.css";
 import FormInput from "./FormInput";
 
 const Registration = () => {
+  const searchParams = new URLSearchParams(window.location.search);
+  const roomId = searchParams.get("roomId");
   const [values, setValues] = useState({
     username: "",
-    email: "",
-    NumberOfGuest: "",
-    ArrivalData: "",
-    DepartureDate: "",
-    SpecialRequest: "",
+    phone: "",
+    guests: "",
+    checkInDate: "",
+    checkOutDate: "",
+    specialRequest: "",
+    roomId,
   });
 
   const inputs = [
@@ -26,53 +29,71 @@ const Registration = () => {
     },
     {
       id: 2,
-      name: "email",
-      type: "email",
-      placeholder: "Email",
-      errorMessage: "It should be a valid email address!",
-      label: "Email",
+      name: "phone",
+      type: "number",
+      placeholder: "Phone",
+      errorMessage: "It should be a valid Phone number!",
+      label: "Phone",
       required: true,
     },
+
     {
       id: 3,
-      name: "Number of Guest",
+      name: "guests",
       type: "number",
       placeholder: "Total number of guest",
-      errorMessage: "It should be a valid email address!",
+      errorMessage: "It should be a valid number!",
       label: "Number of Guest",
       pattern: "[0-9]*",
       required: true,
     },
     {
       id: 4,
-      name: "Arrival Data",
+      name: "checkInDate",
       type: "date",
       placeholder: "Arrival Data",
       label: "ArrivalData",
     },
     {
       id: 5,
-      name: "Departure Data",
+      name: "checkOutDate",
       type: "date",
       placeholder: "Departure Data",
       label: "DepartureData",
     },
     {
       id: 6,
-      name: "Special Request",
+      name: "specialRequest",
       type: "box",
       placeholder: "Any Special request",
-      errorMessage: "It should be a valid email address!",
+      errorMessage: "It should be a valid character!",
       label: "Special request",
       required: true,
     },
   ];
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const token = localStorage.getItem("token");
+    try {
+      const response = await fetch("http://localhost:8081/reservation", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(values),
+      });
+
+      const data = await response.json();
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const onChange = (e) => {
+    console.log(e.target.name);
     setValues({ ...values, [e.target.name]: e.target.value });
   };
 

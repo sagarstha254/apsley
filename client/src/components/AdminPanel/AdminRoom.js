@@ -45,7 +45,7 @@ export default function AdminProducts() {
   //Update a product
   async function update(id) {
     const userData = {
-      roomId: { id },
+      roomId : `${id}`,
       number: number,
       description: description,
       price: price,

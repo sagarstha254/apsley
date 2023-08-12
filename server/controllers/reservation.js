@@ -18,7 +18,6 @@ exports.postReservation = async (req, res, next) => {
 
     // Find the user
     const userId = req.userId;
-    console.log(userId,"iddl");
     const user = await User.findById(userId);
     if (!user) {
       errorHandler("User not found.", 404);
@@ -35,7 +34,6 @@ exports.postReservation = async (req, res, next) => {
     const checkInDate = req.body.checkInDate;
     const checkOutDate = req.body.checkOutDate;
     const guests = req.body.guests;
-
     // Create new reservation
     const reservation = new Reservation({
       userId: userId,

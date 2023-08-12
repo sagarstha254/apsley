@@ -95,7 +95,7 @@ exports.updateRoom = async (req, res, next) => {
     }
 
     // Extract input data
-    const roomId = req.params.roomId;
+    const roomId = req.body.roomId;
     const number = req.body.number;
     const description = req.body.description;
     const roomType = req.body.roomType;
@@ -118,7 +118,8 @@ exports.updateRoom = async (req, res, next) => {
       clearImage(room.image);
     }
     // Update room details
-    room.name = name;
+
+    room.number = number;
     room.description = description;
     room.roomType = roomType;
     room.price = price;

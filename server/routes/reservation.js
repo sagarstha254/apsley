@@ -8,19 +8,17 @@ const router = express.Router();
 
 router.post(
   "/reservation",
-  // isAuth(["user"]),
+  isAuth(["user"]),
   reservationController.postReservation
 );
 
 router.get(
   "/admin/reservations",
-  isAuth(["admin"]),
   reservationController.getReservations
 );
 
 router.get(
   "/admin/reservation/:reservationId",
-  isAuth(["admin"]),
   reservationController.getReservation
 );
 
