@@ -4,6 +4,9 @@ import { FaPhone, FaShoppingCart, FaUser } from "react-icons/fa";
 import styles from "./Navbar.module.css";
 
 const Navbar = () => {
+  const logout = () => {
+    localStorage.removeItem("token")
+  };
   return (
     <>
       <nav className={styles.navbar}>
@@ -51,6 +54,7 @@ const Navbar = () => {
           <Link to="/cart">
             <FaShoppingCart />
           </Link>
+          <button onClickCapture={logout}>Logout</button>
         </div>
       </nav>
     </>

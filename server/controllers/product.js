@@ -2,35 +2,45 @@ const { validationResult } = require("express-validator");
 
 const errorHandler = require("../middlewares/error-handler");
 const clearImage = require("../utils/clear-image");
+const multer = require('multer')
+const upload = multer();
 
 const Product = require("../models/product");
 const { connect } = require("mongoose");
 
+const express = require("express");
+const app = express();
+
 //Create new product
 exports.postProduct = async (req, res, next) => {
   try {
+    const imageName = req.file.filename
+
     // Input validation
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       const errorMessage = errors.array()[0].msg;
       return errorHandler(errorMessage, 422);
     }
-    if (!req.body.image) {
+    if (!req.file.filename) {
       return errorHandler("Please provide a image.", 422);
     }
 
+
+    console.log(req.file.filename,"image");
+    
     // Extract input data
     const name = req.body.name;
     const description = req.body.description;
     const price = req.body.price;
-    const image = req.body.image;
+    const image = req.file.filename;
 
     // Create new product
     const product = new Product({
       name: name,
       description: description,
       price: price,
-      image: image,
+      image: req.file.filename,
     });
 
     // Save the product
@@ -48,6 +58,8 @@ exports.postProduct = async (req, res, next) => {
     next(err);
   }
 };
+
+
 
 // Fetch all products (pagination)
 exports.getProducts = async (req, res, next) => {

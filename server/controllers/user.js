@@ -54,12 +54,16 @@ exports.login = async (req, res, next) => {
     const password = req.body.password;
     const user = await User.findOne({ email: email });
     if (!user) {
-      errorHandler("A user with this email could not be found.", 401);
+      res.status(401).json({
+        message:"A user with this email could not be found.",
+      })
     }
 
     const isEqual = await bcrypt.compare(password, user.password);
     if (!isEqual) {
-      errorHandler("Wrong password. Please enter a correct one.", 401);
+      res.status(401).json({
+        message:"Wrong password. Please enter a correct one.",
+      })
     }
 
     const token = jwt.sign(

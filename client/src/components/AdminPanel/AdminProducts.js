@@ -6,34 +6,41 @@ export default function AdminProducts() {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
-  const [image, setimage] = useState("");
+  const [file, setfile] = useState();
   const [message, setMessage] = useState("");
   const [productList, setProductList] = useState([]);
+  
 
   //Insert a product
   async function handleSubmit(e) {
     e.preventDefault();
 
     const userData = {
-      name: name,
-      description: description,
-      price: price,
-      image: image,
+      
     };
+
+    const formData = new FormData();
+    formData.append("name", name);
+    formData.append("description", description);
+    formData.append("price", price);
+    formData.append("productImage", file);
 
     const token = localStorage.getItem("token");
     try {
       const response = await fetch("http://localhost:8081/admin/product", {
         method: "POST",
-        headers: { "Content-Type": "application/json" , "Authorization": `Bearer ${token}`},
-        body: JSON.stringify(userData),
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        body: formData,
       });
+
+      console.log(formData.get("productImage"));
 
       const data = await response.json();
       setMessage(data.message);
       // Update the productList state with the newly added product
-      setProductList((prevProductList) => [...prevProductList, userData]);
-
+      // setProductList((prevProductList) => [...prevProductList, userData]);
     } catch (error) {
       console.error(error);
     }
@@ -41,38 +48,40 @@ export default function AdminProducts() {
 
   //Update a product
   async function update(id) {
-    const userData = {
-      productId: { id },
-      name: name,
-      description: description,
-      price: price,
-      image: image,
-    };
+    // const userData = {
+    //   productId: { id },
+    //   name: name,
+    //   description: description,
+    //   price: price,
+    //   image: image,
+    // };
 
-    const token = localStorage.getItem("token");
-    try {
-      const response = await fetch(
-        `http://localhost:8081/admin/product/${id}`,
-        {
-          method: "PUT",
-          headers: { "Content-Type": "application/json", "AuthorizatIon": `Bearer ${token}` ,
-        },
-          body: JSON.stringify(userData),
-        }
-      );
+    // const token = localStorage.getItem("token");
+    // try {
+    //   const response = await fetch(
+    //     `http://localhost:8081/admin/product/${id}`,
+    //     {
+    //       method: "PUT",
+    //       headers: {
+    //         "Content-Type": "application/json",
+    //         AuthorizatIon: `Bearer ${token}`,
+    //       },
+    //       body: JSON.stringify(userData),
+    //     }
+    //   );
 
-      const data = await response.json();
-      setMessage(data.message);
+    //   const data = await response.json();
+    //   setMessage(data.message);
 
-      // Update the productList state with the updated product
-      setProductList((prevProductList) =>
-        prevProductList.map((product) =>
-          product._id === id ? { ...product, ...userData } : product
-        )
-      );
-    } catch (error) {
-      console.error(error);
-    }
+    //   // Update the productList state with the updated product
+    //   setProductList((prevProductList) =>
+    //     prevProductList.map((product) =>
+    //       product._id === id ? { ...product, ...userData } : product
+    //     )
+    //   );
+    // } catch (error) {
+    //   console.error(error);
+    // }
   }
   //Delete a product
   async function remove(id) {
@@ -82,7 +91,10 @@ export default function AdminProducts() {
         `http://localhost:8081/admin/product/${id}`,
         {
           method: "DELETE",
-          headers: {"Content-Type":"applicaton/json", "Authorization": `Bearer ${token}`},
+          headers: {
+            "Content-Type": "applicaton/json",
+            Authorization: `Bearer ${token}`,
+          },
         }
       );
 
@@ -148,9 +160,9 @@ export default function AdminProducts() {
             <input
               type="file"
               accept="image/png,image/jpg,image/jpeg"
-              name="image"
+              filename={file}
               className={styles.box}
-              onChange={(e) => setimage(e.target.value)}
+              onChange={(e) => setfile(e.target.files[0])}
             ></input>
             <input
               type="submit"
