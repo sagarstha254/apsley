@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from "./Reservation.module.css";
 import FormInput from "./FormInput";
+import api_url from "../../config";
 
 const Registration = () => {
   const searchParams = new URLSearchParams(window.location.search);
@@ -77,7 +78,7 @@ const Registration = () => {
 
     const token = localStorage.getItem("token");
     try {
-      const response = await fetch("http://localhost:8081/reservation", {
+      const response = await fetch(`${api_url}/reservation`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

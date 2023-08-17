@@ -14,7 +14,7 @@ exports.postRoom = async (req, res, next) => {
       const errorMessage = errors.array()[0].msg;
       errorHandler(errorMessage, 422);
     }
-    if (!req.body.image) {
+    if (!req.file.filename) {
       errorHandler("No image provided", 422);
     }
 
@@ -23,7 +23,7 @@ exports.postRoom = async (req, res, next) => {
     const description = req.body.description;
     const roomType = req.body.roomType;
     const price = req.body.price;
-    const image = req.body.image;
+    const image = req.file.filename;
 
     // Create new room
     const room = new Room({
@@ -100,10 +100,10 @@ exports.updateRoom = async (req, res, next) => {
     const description = req.body.description;
     const roomType = req.body.roomType;
     const price = req.body.price;
-    let image = req.body.image;
+    let image = req.file.filename;
 
-    if (req.body.image) {
-      image = req.body.image;
+    if (req.file.filename) {
+      image = req.file.filename;
     }
     if (!image) {
       errorHandler("No file picked.", 422);
@@ -154,7 +154,7 @@ exports.deleteRoom = async (req, res, next) => {
     await Room.findByIdAndRemove(roomId);
 
     //Send response
-    res.status(200).json({ messge: "Room deleted." });
+    res.status(200).json({ message: "Room deleted." });
   } catch (err) {
     if (!err.statusCode) {
       err.statusCode = 500;

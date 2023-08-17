@@ -1,21 +1,19 @@
 const { validationResult } = require("express-validator");
-
 const errorHandler = require("../middlewares/error-handler");
 const clearImage = require("../utils/clear-image");
-const multer = require('multer')
+const multer = require("multer");
 const upload = multer();
-
 const Product = require("../models/product");
 const { connect } = require("mongoose");
-
 const express = require("express");
 const app = express();
+
+const fs = require("fs");
+const path = require("path");
 
 //Create new product
 exports.postProduct = async (req, res, next) => {
   try {
-    const imageName = req.file.filename
-
     // Input validation
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -27,20 +25,19 @@ exports.postProduct = async (req, res, next) => {
     }
 
 
-    console.log(req.file.filename,"image");
-    
     // Extract input data
     const name = req.body.name;
     const description = req.body.description;
     const price = req.body.price;
     const image = req.file.filename;
+    
 
     // Create new product
     const product = new Product({
       name: name,
       description: description,
       price: price,
-      image: req.file.filename,
+      image: image,
     });
 
     // Save the product
@@ -59,8 +56,6 @@ exports.postProduct = async (req, res, next) => {
   }
 };
 
-
-
 // Fetch all products (pagination)
 exports.getProducts = async (req, res, next) => {
   try {
@@ -77,7 +72,6 @@ exports.getProducts = async (req, res, next) => {
     if (!products) {
       return errorHandler("No product added yet.", 404);
     }
-
     // Send response
     res.status(200).json({
       message: "Products fetched successfully.",
@@ -130,11 +124,10 @@ exports.updateProduct = async (req, res, next) => {
     const name = req.body.name;
     const description = req.body.description;
     const price = req.body.price;
-    let image = req.body.image;
-    console.log(price,"dfa");
+    let image = req.file.filename;
 
-    if (req.body.image) {
-      image = req.body.image;
+    if (req.file.filename) {
+      image = req.file.filename;
     }
     if (!image) {
       errorHandler("No file picked.", 422);

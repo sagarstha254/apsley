@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./AdminProducts.module.css";
+import api_url from "../../config";
 
 import AdminNavBar from "./AdminNavBar";
 
@@ -11,7 +12,7 @@ const AdminCustomerList = () => {
   useEffect(() => {
     const getProduct = async () => {
       try {
-        const response = await fetch("http://localhost:8081/user", {
+        const response = await fetch(`${api_url}/user`, {
           method: "GET",
         });
 
@@ -29,7 +30,7 @@ const AdminCustomerList = () => {
     const token = localStorage.getItem("token");
 
     try {
-      const response = await fetch(`http://localhost:8081/user/${id}`, {
+      const response = await fetch(`${api_url}/user/${id}`, {
         method: "DELETE",
         headers: {"Content-Type":"application/jspn", "Authorization":`Bearer ${token}`},
       });

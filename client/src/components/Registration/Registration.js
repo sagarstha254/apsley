@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Registration.module.css";
+import api_url from "../../config";
+
 
 function Registration() {
   const [name, setName] = useState("");
@@ -19,7 +21,7 @@ function Registration() {
     };
 
     try {
-      const response = await fetch("http://localhost:8081/signup", {
+      const response = await fetch(`${api_url}/signup`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(userData),

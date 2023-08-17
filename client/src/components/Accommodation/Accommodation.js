@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import Navbar from "../Navbar/Navbar";
 import styles from "./Accommodation.module.css";
 import {useNavigate } from "react-router-dom";
+import api_url from "../../config";
+
     
 export const Accomodation = () => {
    const navigate = useNavigate();
@@ -9,7 +11,7 @@ export const Accomodation = () => {
 
    async function fetchProduct() {
      try {
-       const response = await fetch("http://localhost:8081/rooms");
+       const response = await fetch(`${api_url}/rooms`);
        const responseData = await response.json();
        setRooms(responseData.rooms);
      } catch (error) {
@@ -37,7 +39,7 @@ export const Accomodation = () => {
               <strong>{room.roomType}</strong>
               </div>
               <div className={styles.image}>
-              <img src={`http://localhost:8081/${room.image}`} alt={room.name}
+              <img src={`${api_url}/${room.image}`} alt={room.name}
               ></img>
               </div>
               </div>

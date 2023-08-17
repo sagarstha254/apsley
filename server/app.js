@@ -15,7 +15,6 @@ const app = express();
 
 //General Middleware
 app.use(express.json());
-app.use("/images", express.static(path.join(__dirname, "images")));
 
 //CORS Headers
 
@@ -24,12 +23,14 @@ app.use((req, res, next) => {
   res.setHeader(
     "Access-Control-Allow-Methods",
     "OPTIONS, GET, POST, PUT, PATCH, DELETE"
-  );
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
-  next();
-});
-
-//Routes Middleware
+    );
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+    next();
+  });
+  
+  //Routes Middleware
+app.use('/images/products', express.static(path.join(__dirname, 'images', 'products')));
+app.use('/images/rooms', express.static(path.join(__dirname, 'images', 'rooms')));
 app.use(userRoutes);
 app.use(productRoutes);
 app.use(roomRoutes);
