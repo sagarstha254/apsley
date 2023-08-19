@@ -29,3 +29,8 @@
   .product a {
     display: block;
   }
+
+  .reservation{
+    display: flex;
+    justify-content: center;
+  }

@@ -1,26 +1,133 @@
-*{
-  padding: 0;
+
+* {
   margin: 0;
-  text-decoration:none ;
+  padding: 0;
+  box-sizing: border-box;
+}
+.image{height: 200px;
+}
+.image img{
+  height: 90px;
+  width: 6%;
+  background-color: black;
+  margin-left: 5%;
+  border-radius: 50%;
+  margin-top: 3%;
+}
+.container {
+  max-width: 1170px;
+  margin: auto;
+  margin-top: -5%;
+  
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+ul {
   list-style: none;
-  font-family: 'work sans',sans-serif;
+}
+.footer {
+  background-color: white;
+  padding: 10px 0 60px 0;
+  
+}
+
+.Desc{
+  margin-right: 18%;
+  color: black;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.h1{
+  color: black;
+  font-size: 25px;
+  font-weight: 700;
 
 }
 
-body{
-  height: 100px;
 
+.footercol {
+  width: 20%;
+  padding: 0 15px;
+  
+  
+  
+  
+}
+.footercol h4 {
+  font-size: 16px;
+  color: Black;
+  text-transform: capitalize;
+  margin-bottom: 35px;
+  font-weight: 700;
+  position: relative;
+}
+.footercol h4::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  background-color: #bbbbbb;
+  height: 2px;
+  box-sizing: border-box;
+  width: 80px;
+}
+.footercol ul li:not(:last-child) {
+  margin-bottom: 10px;
+}
+.footercol ul li a {
+  font-size: 16px;
+  text-transform: capitalize;
+  color: Black;
+  text-decoration: none;
+  font-weight: 400;
+  display: block;
+  transition: all 0.3s ease;
+}
+.footercol ul li a:hover {
+  color: #bbbbbb;
+  padding-left: 8px;
+}
+.footercol .sociallinks a {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: #24262b solid 2px;
+  margin: 0 20px 20px 0;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color:#24262b; 
+  transition: all 0.5s ease;
+}
+.footercol .sociallinks a:hover {
+  color: #bbbbbb;
+  background-color: #ffffff;
 }
 
-section{
-  padding: 100px;
-height: 100px;
-
+/*responsive*/
+@media (max-width: 767px) {
+  .footercol {
+    width: 50%;
+    margin-bottom: 30px;
+  }
+  .image{height: 200px;
+    }
+  .Desc{
+    margin-left: 10%;
+    margin-bottom: 20px;
+    
+  }
 }
+@media (max-width: 574px) {
 
-.footer{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, auto));
-  gap:3.5rem;
-  background: green;
+  .image{height: 150px;
+  }
+  .footercol {
+    width: 100%;
+  }
 }

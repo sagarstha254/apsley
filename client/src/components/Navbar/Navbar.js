@@ -5,10 +5,17 @@ import styles from "./Navbar.module.css";
 
 const Navbar = () => {
   const logout = () => {
-    localStorage.removeItem("token")
+    localStorage.removeItem("token");
   };
   return (
     <>
+      <link
+        rel="stylesheet"
+        type="text/css"
+        href="
+https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css
+"
+      />
       <nav className={styles.navbar}>
         <div>
           <img src="./Images/logo.png" alt="Apsley Arms Hotel" />
@@ -51,10 +58,11 @@ const Navbar = () => {
           <Link to="/registration">
             <FaUser />
           </Link>
-          <Link to="/cart">
-            <FaShoppingCart />
-          </Link>
-          <button onClickCapture={logout}>Logout</button>
+          <div className={styles["button"]}>
+            <button onClickCapture={logout}>
+            <i class="fa-solid fa-door-open"></i>
+            </button>
+          </div>
         </div>
       </nav>
     </>

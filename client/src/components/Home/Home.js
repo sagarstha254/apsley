@@ -1,7 +1,10 @@
 import React from "react";
 import Navbar from "../Navbar/Navbar";
 import styles from "./Home.module.css";
-
+import Recipe from "../Recipe/Recipe";
+import About from "../About/About";
+import About1 from "../About/About1";
+import Footer from "../Footer/Footer";
 const Home = () => {
   return (
     <>
@@ -102,6 +105,11 @@ const Home = () => {
             strokeWidth="3"
           />
         </svg>
+        <Recipe />
+        <About />
+        <About1 />
+        <Footer />
+
       </div>
     </>
   );

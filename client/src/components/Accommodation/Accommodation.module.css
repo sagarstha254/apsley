@@ -1,8 +1,18 @@
+.main{width: 100%;}
+
+
+
 .h1{
     margin: 4rem 6rem;
 }
 .reservation{
     margin: 4rem 6rem;
+    border:  2px ;
+    width: 80%;
+    border-radius: 20px;
+    padding-bottom: 10px;
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.25);
+
 }
 .reservation h1{
     font-size:  3rem;
@@ -15,7 +25,7 @@
 }
 .text{
     width: 55%;
-    text-align: start;
+    text-align: center;
     font-size: 1.1rem;
 }
 .text h2{
@@ -28,10 +38,11 @@
     justify-content: space-between;
     z-index: -99;
     margin: 1.9rem;
+    border-radius: 13px;
 }
 .image img{
     width: 80%;
-    height: 300px;
+    height: 400px;
     object-fit: cover;
     border-radius: 6px;
     box-shadow: -1px 1px 62px -18px rgba(0,0,0,0.19);
@@ -55,6 +66,9 @@
      4px 4px 5px 0px rgba(0,0,0,.1);
     outline: none;
     font-size: 15px;
+    margin-left: 2%;
+    margin-top: 10%;
+   
   }
   
   .button{

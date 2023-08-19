@@ -1,0 +1,274 @@
+
+.main{
+    background-image: url('https://scontent.xx.fbcdn.net/v/t1.15752-9/367428643_838134554152661_2595217359839298837_n.png?_nc_cat=101&cb=99be929b-3346023f&ccb=1-7&_nc_sid=510075&_nc_ohc=o0KIXqoa0vwAX9UmTeV&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdSXUq1LETXMJi5tbB3QMCpdmG4oqN4JvT3t1uFTMDKx5A&oe=6501AD26');
+    margin-top: 2%;
+    padding-top: 45px;
+    background-size: 110% 51%;
+    height: 1600px;
+}
+    
+
+.header {
+   text-align: center;
+   font-size: 36px;
+    
+  }
+
+.h1{text-align: center;
+    font-size: 36px;
+    color: #3A5E2E;
+    font-weight: 400;
+    
+
+}
+
+.h2{text-align: center;
+    font-size: 38px;
+    color: #4E8445;
+    font-weight: 600;
+
+}
+
+.header p{
+    font-size: 20px;
+    font-weight: 400;
+    
+}
+
+.recipe{
+    
+    margin-top: 10%;
+    padding-left: 5%;
+    height: 300px;
+    display: flex;
+    width: 95%;
+    
+}
+
+.rec1{
+    background-color: aliceblue;
+    height: 495px;
+    width: 21%;
+    padding: 20px;
+    margin-left: 3%;
+    border-radius: 0px 50px 0px 50px;
+
+    
+    
+}
+
+.price {
+    background-color: black;
+    width: 40px;
+    height: 40px;
+    align-content: space-around;
+    color: white;
+    text-align: center;
+    padding :1px 1px 1px 1px;
+    border-radius: 50%;
+
+}
+
+
+.rec1 img{
+    height: 247px;
+    width: 246px;
+    border-radius: 50%;
+    margin-left: 6%;
+
+  }
+
+.descripton {
+    text-align: center;
+   
+}
+
+.desh1{
+    color: black;
+}
+
+
+.descripton p h1{
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.rec2{
+    background-color: aliceblue;
+    height: 495px;
+    width: 21%;
+    padding: 20px;
+    border-radius: 0px 50px 0px 50px;
+    margin-left: 3%;
+    
+    
+}
+.rec2 img{
+    height: 247px;
+    width: 246px;
+    border-radius: 50%;
+    margin-left: 6%;
+
+  }
+
+  .rec3{
+    background-color: aliceblue;
+    height: 495px;
+    width: 21%;
+    padding: 20px;
+    border-radius: 0px 50px 0px 50px;
+    margin-left: 3%;
+    
+    
+}
+.rec3 img{
+    height: 247px;
+    width: 246px;
+    border-radius: 50%;
+    margin-left: 6%;
+
+  }
+
+  .rec4{
+    background-color: aliceblue;
+    height: 495px;
+    width: 21%;
+    padding: 20px;
+    border-radius: 0px 50px 0px 50px;
+    margin-left: 3%;
+    
+    
+}
+.rec4 img{
+    height: 247px;
+    width: 246px;
+    border-radius: 50%;
+    margin-left: 6%;
+
+  }
+
+  .firstSvg {
+    width: 60.49px;
+    height: 42.875px;
+    transform: rotate(-179.842deg);
+    flex-shrink: 0;
+    stroke-width: 7px;
+    stroke: #dae952;
+    position: absolute;
+    top: -13%;
+    left:45%
+  }
+  
+  .secondSvg {
+    width: 60.49px;
+    height: 42.875px;
+    transform: rotate(-179.842deg);
+    flex-shrink: 0;
+    stroke-width: 7px;
+    stroke: #dae952;
+    position: absolute;
+    top: 10%;
+    left:100%
+  }
+
+  .inner{  
+    margin-top: 25%;
+    height: 600px;
+    width: 88%;
+    padding-left: 12%;
+    display: flex;
+    position:relative;
+    text-align: center;
+  }
+
+  
+
+  .first img{
+    height:515px ;
+    width: 100%;
+    border-radius: 258px;
+    
+    
+  }
+
+  .second{
+    text-align: center;
+    margin-top: 5%;
+    margin-left: 6%;
+    
+
+  }
+
+  .second h1{
+    font-size: 40px;
+    font-weight: 400;
+    color: black;
+    
+  }
+
+  .second p{
+    font-size: 20px;
+    font-weight: 400;
+  }
+
+  .button {
+    background-color: #DAE952;
+    color: #333;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    width: 229px;
+    height: 58px;
+    position: absolute;
+    right: 8%;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    }
+    
+    .button:hover {
+      background-color: #f2f2f2;
+    }
+
+
+    @media (max-width: 1200px) {
+      .inner{  
+        
+        display: grid;
+       
+      }
+      .main{height: 1900px;}
+
+      .button{left: 48%;}
+
+      .first img{
+        
+        border-radius: 48%
+        
+        
+      }
+
+
+      .rec1 img{
+        height: 200px;
+        width: 200px;}
+
+
+      .rec2 img{
+        height: 200px;
+        width: 200px;}
+
+      .rec3 img{
+        height: 200px;
+        width: 200px;}
+
+
+      .rec4 img{
+        height: 200px;
+        width: 200px;}
+    
+      
+      
+    
+    
+    }

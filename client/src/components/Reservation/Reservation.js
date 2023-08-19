@@ -2,10 +2,14 @@ import { useState } from "react";
 import styles from "./Reservation.module.css";
 import FormInput from "./FormInput";
 import api_url from "../../config";
+import { useNavigate } from "react-router-dom";
 
 const Registration = () => {
   const searchParams = new URLSearchParams(window.location.search);
   const roomId = searchParams.get("roomId");
+  const [message, setMessage] = useState("");
+  const navigate = useNavigate();
+
   const [values, setValues] = useState({
     username: "",
     phone: "",
@@ -88,6 +92,13 @@ const Registration = () => {
       });
 
       const data = await response.json();
+      setMessage(data.message);
+
+      setTimeout(() => {
+        navigate("/"); // Navigate to "/home-page" after 3 seconds
+      }, 2000);
+
+
     } catch (error) {
       console.log(error);
     }
@@ -101,6 +112,7 @@ const Registration = () => {
     <div className={styles.Registration}>
       <form onSubmit={handleSubmit}>
         <h1>Booking Room</h1>
+        <h1>{message}</h1>
         {inputs.map((input) => (
           <FormInput
             key={input.id}

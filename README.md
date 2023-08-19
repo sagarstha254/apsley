@@ -27,7 +27,7 @@ To set up the Apsley Arms Hotel website locally, follow these steps:
 1. Clone this repository to your local machine using the following command:
 
 ```bash
-git clone https://github.com/bhumirajpurie/apsley-arms-hotel.git
+git clone https://github.com/sagarstha254/apsley
 ```
 
 2. Navigate to the project's root directory:
