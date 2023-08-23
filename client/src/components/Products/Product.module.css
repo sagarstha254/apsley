@@ -1,36 +1,85 @@
-.productContainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+.main{
+  width: 100%;
+  margin-top: 80px;
+margin-bottom: 30px;
+}
 
-  .product {
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 20px;
-    margin: 10px;
-    text-align: center;
-    width: 200px;
-  }
+.inner{
+width: 80%;
+height: 500px;
+background-color: aliceblue;
+border-radius: 18px;
+margin-left: 10%;
+padding-left: 45px;
+padding-top: 10px;
+box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.25);
 
-  .product h1 {
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
+}
 
-  .product p {
-    margin-bottom: 10px;
-  }
+.title{width: 40%;
+}
 
-  .product img {
-    margin-bottom: 10px;
-  }
 
-  .product a {
-    display: block;
-  }
+.h1{text-align: left;
+color: black;}
 
-  .reservation{
-    display: flex;
-    justify-content: center;
-  }
+
+.innermain{
+width: 98%;
+height: 350px;
+display: flex;
+margin-top: 25px;
+
+}
+
+.desc{
+padding-left: 20px;
+padding-top: 25px;
+width: 30%;
+height: 300px;
+text-align: left;
+
+}
+.book{
+width: 94%;
+height: 100px;
+padding-top: 18%;
+padding-left: 15%;
+
+}
+.book button{
+height:40px;
+width: 150px;
+background-color:Black;
+overflow: hidden;
+border: solid;
+border-color: white;
+color:whitesmoke; 
+text-decoration: none;
+border-radius: 30PX;
+font-size: 16px;
+font-weight: 400;
+}
+
+.book button:hover{
+background-color: #ddd;
+color: black;
+border-color: black;
+}
+
+.photo{
+margin-left: 10%;
+width: 68%;
+height: 350px;
+margin-top: -6%;
+
+
+
+}
+
+.photo img{
+height:400px ;
+width: 100%;
+border-radius: 10px;
+box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.25);
+}

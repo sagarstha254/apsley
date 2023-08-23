@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import styles from "./Login.module.css";
 import { useNavigate } from "react-router-dom";
 import api_url from "../../config";
+import { ToastContainer, toast } from "react-toastify";
+
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -10,9 +12,10 @@ function Login() {
 
   const navigate = useNavigate();
 
+
+
   async function handleSubmit(e) {
     e.preventDefault();
-
     const userData = {
       email: email,
       password: password,
@@ -29,67 +32,79 @@ function Login() {
 
       if (response.ok) localStorage.setItem("token", data.token);
       if (response.ok) navigate("/");
+      if (response.ok) alert("logged In");
     } catch (error) {
       console.error(error);
     }
+
+    const display = () => {
+      toast("loggedIn",{
+        position: "top-center"
+      });
+    }
+    display();
+
+
   }
 
   return (
-    
-    <div className={styles.signupcontainer}>
-      <div className={styles.slogan}>
-        <h1 className={styles.title}>
-          Apsley Arms Hotel
-          <br />
-          Connecting your needs......
-        </h1>
-      </div>
-      <div className={styles.container}>
-        <div className={styles.login}>
-          <h1>Login</h1>
-          <h1>{message}</h1>
+    <>
+      <div className={styles.signupcontainer}>
+        <div className={styles.slogan}>
+          <h1 className={styles.title}>
+            Apsley Arms Hotel
+            <br />
+            Connecting your needs......
+          </h1>
+        </div>
+        <div className={styles.container}>
+          <div className={styles.login}>
+            <h1>Login</h1>
+            <h1>{message}</h1>
 
-          <form onSubmit={handleSubmit}>
-            <div className={styles.incontainer}>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-              <label htmlFor="email">Email:</label>
-            </div>
-            <div className={styles.incontainer}>
-              <input
-                type="password"
-                id="password"
-                name="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-              <label htmlFor="password">Password:</label>
-            </div>
-            <div className={styles.forgot}>
-              <br />
-              <div className={styles.button}>
-                <button type="submit" className={styles.button}>
-                  Lets Go =>
-                </button>
-                <br />
-                <br />
+            <form onSubmit={handleSubmit}>
+              <div className={styles.incontainer}>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+                <label htmlFor="email">Email:</label>
               </div>
-              <div className={styles.link}>
-                <p>
-                  Don't have an account
-                  <a href="/registration"> Register</a>
-                </p>
+              <div className={styles.incontainer}>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                <label htmlFor="password">Password:</label>
               </div>
-            </div>
-          </form>
+              <div className={styles.forgot}>
+                <br />
+                <div className={styles.button}>
+                  <button type="submit" className={styles.button}>
+                    Lets Go =
+                  </button>
+                  <br />
+                  <br />
+                </div>
+                <div className={styles.link}>
+                  <p>
+                    Don't have an account
+                    <a href="/registration"> Register</a>
+                  </p>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
+      <ToastContainer />
+    </>
   );
 }
 

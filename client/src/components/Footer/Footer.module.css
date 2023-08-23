@@ -1,12 +1,12 @@
+*{
 
-* {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
+
 }
-.image{height: 200px;
+.image {
+  height: 200px;
 }
-.image img{
+.image img {
   height: 90px;
   width: 6%;
   background-color: black;
@@ -18,7 +18,7 @@
   max-width: 1170px;
   margin: auto;
   margin-top: -5%;
-  
+  margin-bottom: 50px;
 }
 .row {
   display: flex;
@@ -30,10 +30,9 @@ ul {
 .footer {
   background-color: white;
   padding: 10px 0 60px 0;
-  
 }
 
-.Desc{
+.Desc {
   margin-right: 18%;
   color: black;
   text-align: center;
@@ -41,21 +40,16 @@ ul {
   font-weight: 400;
 }
 
-.h1{
+.h1 {
   color: black;
   font-size: 25px;
   font-weight: 700;
-
 }
-
 
 .footercol {
   width: 20%;
   padding: 0 15px;
-  
-  
-  
-  
+  box-sizing: border-box;
 }
 .footercol h4 {
   font-size: 16px;
@@ -101,7 +95,7 @@ ul {
   text-align: center;
   line-height: 40px;
   border-radius: 50%;
-  color:#24262b; 
+  color: #24262b;
   transition: all 0.5s ease;
 }
 .footercol .sociallinks a:hover {
@@ -115,17 +109,17 @@ ul {
     width: 50%;
     margin-bottom: 30px;
   }
-  .image{height: 200px;
-    }
-  .Desc{
+  .image {
+    height: 200px;
+  }
+  .Desc {
     margin-left: 10%;
     margin-bottom: 20px;
-    
   }
 }
 @media (max-width: 574px) {
-
-  .image{height: 150px;
+  .image {
+    height: 150px;
   }
   .footercol {
     width: 100%;

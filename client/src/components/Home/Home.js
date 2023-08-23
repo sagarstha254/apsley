@@ -5,10 +5,11 @@ import Recipe from "../Recipe/Recipe";
 import About from "../About/About";
 import About1 from "../About/About1";
 import Footer from "../Footer/Footer";
+
 const Home = () => {
   return (
     <>
-      <div className={styles.section}>
+      <div className= {styles.section}>
         <Navbar />
         <div className={styles.bigSvg}>
           <svg
@@ -30,7 +31,6 @@ const Home = () => {
             <h2 className={styles.slogan}>Enjoy luxury and comfort</h2>
             <button className={styles.button}>Find For More</button>
           </div>
-          <div className={styles.border}></div>
           <div className={styles.image1}>
             <img src="./Images/food.png" alt="Image 1" />
           </div>

@@ -149,14 +149,14 @@ export default function AdminProducts() {
               placeholder="Enter your room type"
               name="type"
               className={styles.box}
-              onChange={(e) => setDescription(e.target.value)}
+              onChange={(e) => setroomType(e.target.value)}
             ></input>
             <input
               type="text"
               placeholder="Enter your room description"
               name="description"
               className={styles.box}
-              onChange={(e) => setroomType(e.target.value)}
+              onChange={(e) => setDescription(e.target.value)}
             ></input>
             <input
               type="file"

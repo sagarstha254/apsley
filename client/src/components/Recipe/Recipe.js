@@ -7,7 +7,7 @@ const Recipe = () => {
 
   return (
     <>
-    <div className='main'> 
+    <div className='main' id ="recipe"> 
       <div className="header">
         <h1 className='h1'> Our Delicious and special recipe </h1>
         <h1 className='h2'><b>Apslay Arms Hotel</b></h1>

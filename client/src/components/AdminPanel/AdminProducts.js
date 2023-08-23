@@ -189,13 +189,13 @@ export default function AdminProducts() {
                           onClick={() => update(i._id)}
                           className={styles.editbtn}
                         >
-                          <i className={styles.edit}></i> Edit
+                          Edit
                         </a>
                         <a
                           onClick={() => remove(i._id)}
                           className={styles.delbtn}
                         >
-                          <i className={styles.delete}></i> Delete
+                          Delete
                         </a>
                       </td>
                     </tr>
