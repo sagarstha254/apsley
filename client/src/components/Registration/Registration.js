@@ -52,7 +52,7 @@ function Registration() {
         <div className={styles.login}>
           <h1>Create Account</h1>
           <h2>{message}</h2>
-          <form onSubmit={handleSubmit}>
+          <form className={styles.form1} onSubmit={handleSubmit}>
             <div className={styles.incontainer}>
             
             <input

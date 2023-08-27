@@ -26,7 +26,7 @@ export const Accomodation = () => {
   return (
     <>
       <Navbar />
-      <h1>Available Rooms</h1>
+      <h1 className={styles.head}>Available Rooms</h1>
       {rooms
         ? rooms.map((room) => (
             <div className={styles.main}>

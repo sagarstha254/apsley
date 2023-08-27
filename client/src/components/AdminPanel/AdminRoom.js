@@ -7,7 +7,6 @@ export default function AdminProducts() {
   const [number, setnumber] = useState("");
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
-  const [image, setimage] = useState("");
   const [roomType, setroomType] = useState("");
   const [message, setMessage] = useState("");
   const [roomList, setRoomList] = useState([]);

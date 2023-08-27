@@ -40,7 +40,7 @@
     color: #333;
     border: none;
     border-radius: 10px;
-    width: 155.311px;
+    width: 140.311px;
     height: 40px;
     position: absolute;
     top:21px;
@@ -48,4 +48,6 @@
     font-family: 'Inter', sans-serif;
     font-size: 16px;
     font-weight: bold;
+    margin-left: 5.2%;
+    margin-top: 0.5%;
 }

@@ -3,6 +3,8 @@ import styles from "./Reservation.module.css";
 import FormInput from "./FormInput";
 import api_url from "../../config";
 import { useNavigate } from "react-router-dom";
+import Footer from "../Footer/Footer";
+import Header from "../Navbar/Navbar";
 
 const Registration = () => {
   const searchParams = new URLSearchParams(window.location.search);
@@ -109,21 +111,27 @@ const Registration = () => {
   };
 
   return (
-    <div className={styles.Registration}>
+    <>
+    <Header />
+      <div className={styles.Registration}>
       <form onSubmit={handleSubmit}>
         <h1>Booking Room</h1>
         <h1>{message}</h1>
-        {inputs.map((input) => (
+        {inputs.map((input)  => (
           <FormInput
             key={input.id}
             {...input}
             value={values[input.name]}
             onChange={onChange}
+            className="input1"
+
           />
         ))}
         <button className={styles.Submit}>Submit</button>
       </form>
     </div>
+    <Footer noLogo />
+    </>
   );
 };
 

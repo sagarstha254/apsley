@@ -1,15 +1,29 @@
 import React from "react";
 // import { Link } from "react-router-dom";
-import { FaArrowRight, FaPhone, FaShoppingCart, FaUser } from "react-icons/fa";
+import { FaArrowRight, FaPhone, FaUser } from "react-icons/fa";
 import styles from "./Navbar.module.css";
+import api_url from "../../config";
+
 
 import PopUp from "../../popup/popup";
 import { HashLink as Link } from "react-router-hash-link";
 
 const Navbar = () => {
-  const logout = () => {
-    localStorage.removeItem("token");
-  };
+  const logout = async() => {
+    try {
+      const response = await fetch(`${api_url}/logout`, {
+        method: "delete",
+        headers: { "Content-Type": "application/json" },
+      });
+      const data = await response.json();
+    if (response.ok) localStorage.removeItem("token");
+    if (response.ok) alert("logged Out");
+
+  }
+  catch (error) {
+    console.error(error);
+  }
+}
   return (
     <>
       <link
@@ -21,10 +35,7 @@ https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css
       />
       <nav className={styles.navbar}>
         <div className={styles.image}>
-          <img
-            src="https://scontent.xx.fbcdn.net/v/t1.15752-9/363550311_305188518715952_7321489297040537218_n.png?_nc_cat=105&cb=99be929b-3346023f&ccb=1-7&_nc_sid=510075&_nc_ohc=xhaIgYc1zH4AX9Gqq5w&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdSqL3IaBtfA60FqoSUpdsxgQcckX5GXk1Lr22k15tCUyg&oe=65001D25"
-            alt="Apsley Arms Hotel"
-          />
+          <img src="images/logo.png" alt="Apsley Arms Hotel" />
         </div>
 
         <div>

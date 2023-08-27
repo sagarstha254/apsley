@@ -1,18 +1,15 @@
 *{
-
   box-sizing: border-box;
-
 }
+
 .image {
-  height: 200px;
+  height: 90px;
 }
 .image img {
   height: 90px;
-  width: 6%;
+  width: 90%;
   background-color: black;
-  margin-left: 5%;
-  border-radius: 50%;
-  margin-top: 3%;
+  margin-top: 10%;
 }
 .container {
   max-width: 1170px;
@@ -28,6 +25,7 @@ ul {
   list-style: none;
 }
 .footer {
+  margin-top: 70px;
   background-color: white;
   padding: 10px 0 60px 0;
 }
@@ -47,8 +45,7 @@ ul {
 }
 
 .footercol {
-  width: 20%;
-  padding: 0 15px;
+  width: 19%;
   box-sizing: border-box;
 }
 .footercol h4 {

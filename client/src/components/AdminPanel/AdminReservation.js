@@ -54,6 +54,7 @@ const AdminReservation = () => {
     <div>
       <AdminNavBar />
       AdminCustomerList
+      <h3>{message}</h3>
       <div className={styles.productdisplay}>
         <table className={styles.productdisplaytable}>
           <thead>

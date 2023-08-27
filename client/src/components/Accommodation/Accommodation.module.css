@@ -67,7 +67,9 @@ color: black;}
   color: black;
   border-color: black;
 }
-
+.head{
+  text-align: center;
+}
 .photo{
   margin-left: 10%;
   width: 68%;

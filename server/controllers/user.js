@@ -55,15 +55,15 @@ exports.login = async (req, res, next) => {
     const user = await User.findOne({ email: email });
     if (!user) {
       res.status(401).json({
-        message:"A user with this email could not be found.",
-      })
+        message: "A user with this email could not be found.",
+      });
     }
 
     const isEqual = await bcrypt.compare(password, user.password);
     if (!isEqual) {
       res.status(401).json({
-        message:"Wrong password. Please enter a correct one.",
-      })
+        message: "Wrong password. Please enter a correct one.",
+      });
     }
 
     const token = jwt.sign(
@@ -90,7 +90,17 @@ exports.login = async (req, res, next) => {
 
 //Logout User
 exports.logout = (req, res, next) => {
-  //logout
+  try {
+      res.status(200).json({
+      message:"Logged Out Successfully"
+    });
+  } catch (err) {
+    if (!err.statusCode) {
+      err.statusCode = 500;
+    }
+    next(err);
+  }
+  
 };
 
 //Fetch User
@@ -123,7 +133,6 @@ exports.getuser = async (req, res, next) => {
     next(err);
   }
 };
-
 
 //Delete a customer
 exports.deleteUser = async (req, res, next) => {

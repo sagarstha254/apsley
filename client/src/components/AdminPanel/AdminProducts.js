@@ -10,7 +10,6 @@ export default function AdminProducts() {
   const [file, setfile] = useState();
   const [message, setMessage] = useState("");
   const [productList, setProductList] = useState([]);
-  const [imageName, setImageName] = useState("");
 
   //Insert a product
   async function handleSubmit(e) {

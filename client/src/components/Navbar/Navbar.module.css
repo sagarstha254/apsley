@@ -11,9 +11,8 @@
 
 .navbar img {
   height: 80px;
-  margin-left: 30%;
+  margin-left: 20%;
   margin-top: 10%;
-  border-radius: 50%;
 }
 
 .navbar ul {
@@ -34,21 +33,6 @@
 }
 
 
-
-.special-offer-button {
-  background-color: #DAE952;
-  color: #333;
-  border: none;
-  border-radius: 10px;
-  width: 155.311px;
-  height: 40px;
-  position: absolute;
-  top:21px;
-  left: 49%;
-  font-family: 'Inter', sans-serif;
-  font-size: 16px;
-  font-weight: bold;
-}
 
 
 .navbar .contact-info {

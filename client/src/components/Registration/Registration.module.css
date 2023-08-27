@@ -1,163 +1,161 @@
-
 .signupcontainer {
   text-align: center;
   justify-content: center;
   display: flex;
   width: 100%;
-  background: linear-gradient(112.27deg, #370001 6.5%, #6CB2C8 94.27% );
-
+  background-color: #dae95233;
 }
 
- 
- 
-  
-
-.container{
+.container {
   position: relative;
   width: 30%;
   height: 650px;
   background: transparent;
-  border: 2px solid rgba(255, 255,255, .5);
+  border: 2px solid rgba(255, 255, 255, 0.5);
   margin-left: 5%;
   margin-top: 3%;
   border-radius: 3%;
   backdrop-filter: blur(100px);
-  box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.container .login{
+.container .login {
   width: 100%;
-  
 }
 
-.login h1{
+.login h1 {
   font-size: 2em;
   color: black;
-  
-  
 }
 
-.login form{
-justify-content: center;
-width: 100%;
-height: 30%;
-border-radius:0px;
-border-color: transparent;  
-background-color: transparent;
-
-color: white;
+.form1 {
+  justify-content: center;
+  width: 100%;
+  height: 30%;
+  border-radius: 0px;
+  border-color: transparent;
+  background-color: transparent;
+  color: white;
 }
 
-.incontainer{
-  
+.incontainer {
   position: relative;
   width: 100%;
   height: 70px;
   margin: 25px 0;
   padding-top: 0px;
-  
 }
 
-
-
-.incontainer label{
+.incontainer label {
   position: absolute;
-  left: -1px;
+  left: 3%;
   top: 50%;
   transform: translateY(-50%);
   font-size: 1em;
   color: black;
   font-weight: 500;
   pointer-events: none;
-  transition: .5s;
+  transition: 0.5s;
 }
 
-
-.incontainer input:focus~label,
-.incontainer input:valid~label{
+.incontainer input:focus ~ label,
+.incontainer input:valid ~ label {
   top: -5px;
 }
 
-
-.incontainer input{
-  width: 100%;
+.incontainer input {
+  margin-top: 3%;
+  margin-left: -15%;
+  width: 80%;
   height: 44px;
   background: transparent;
   background-color: white;
-  border: black solid 2px;
- 
+  border: transparent solid 2px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
   font-size: 1em;
   color: black;
   font-weight: 600;
+  border-color: aliceblue solid 2px;
 }
 
+.button {
+  margin-top: -15px;
+}
 
-
-
-
-
-
-
-.button button{
-  height:44px;
+.button button {
+  height: 44px;
   width: 200px;
-  background-color:Black;
+  background-color: Black;
   overflow: hidden;
   border: solid;
-  border-color: white;
-  color:whitesmoke; 
+  border-color: aliceblue;
+  color: whitesmoke;
   text-decoration: none;
-  border-radius: 30PX;
+  border-radius: 30px;
   font-size: 16px;
   font-weight: 400;
-
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 }
 
 button:hover {
   background-color: #ddd;
   color: black;
   border-color: black;
-  
+}
+
+.paragraph {
+  border-top: solid black 2px;
+}
+
+.link p {
+  color: black;
+}
+
+.link a {
+  text-decoration: none;
+}
+
+.link img {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  margin-right: 20px;
+  margin-left: 20px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  border: solid aliceblue 2px;
 }
 
 .slogan {
   margin-right: 10px;
-  height:750px ;
-  width: 811px;
-  background-image: url('https://scontent.xx.fbcdn.net/v/t1.15752-9/367362172_1038320917120745_1840625855416476902_n.png?_nc_cat=100&cb=99be929b-3346023f&ccb=1-7&_nc_sid=510075&_nc_ohc=oZRGST0H080AX8GJHCd&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdT_cFH4Olbw1TfzUb9T_rZathpSB9eMhcd65HlInmhxbQ&oe=64FFF651');
+  height: 750px;
+  width: 800px;
+  background-image: url("https://media.licdn.com/dms/image/C5603AQH57N3JQ7ph0w/profile-displayphoto-shrink_800_800/0/1651496670385?e=2147483647&v=beta&t=Ul5vEfHq7C8P7xJsjDj3wPW6rf_Lt6mmkib9Ji_E320");
 }
 
-.title{
-  margin-top: 280px;
-  color: white;
-  font-size:54px ;
-  font-weight:300 ;
+.title {
+  margin-top: 310px;
+  color: whitesmoke;
+  font-size: 60px;
+  font-weight: 600;
   text-align: left;
-
+  padding-left: 20px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 }
 
 @media (max-width: 1200px) {
-
   .signupcontainer {
     text-align: center;
     justify-content: center;
     display: grid;
     width: 100%;
     height: 1500px;
-    background: linear-gradient(112.27deg, #370001 6.5%, #6CB2C8 94.27% );
-  
   }
 
-  .container{
+  .container {
     width: 50%;
     margin-left: 25%;
   }
-  
-
-
 }
-
-  

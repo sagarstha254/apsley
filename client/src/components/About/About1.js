@@ -8,9 +8,9 @@ const About = () => {
         <div className={styles.hotel}>
             
             <div className={styles.title}>
-            <h1 className={styles.h2}>Our  Apslay Arms Hotel<br />
+            <h1 className={styles.h2}>Our  Apsley Arms Hotel<br />
                 Happy Customers </h1>
-            <p>A customer is a person or business that buys goods or services from another business. Customers are crucial because<br></br> they generate revenue. Without them, businesses would go out of business.</p>
+            <p>The level of satisfaction customers experience <br></br>after interacting with our company, product, or service is astonishing and marvelous</p>
             </div>
 
             <div className={styles.background}>

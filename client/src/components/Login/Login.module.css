@@ -3,8 +3,7 @@
   justify-content: center;
   display: flex;
   width: 100%;
-  background: linear-gradient(112.27deg, #370001 6.5%, #6CB2C8 94.27% );
-
+  background-color: #DAE95233;
 }
 
  
@@ -62,9 +61,10 @@ color: white;
 
 
 .incontainer label{
+
   position: absolute;
   top: 50%;
-  left: -30px;
+  left: -5%;
   transform: translateY(-50%);
   font-size: 1em;
   color: black;
@@ -81,12 +81,14 @@ color: white;
 
 
 .incontainer input{
-  width: 110%;
+  margin-top: 3%;
+  margin-left: -30%;
+  width: 80%;
   height: 44px;
   background: transparent;
   background-color: white;
-  border: black solid 2px;
-  margin-left: -40px;
+  border: aliceblue solid 2px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, .5);
   font-size: 1em;
   color: black;
   font-weight: 600;
@@ -115,6 +117,7 @@ color: white;
   border-radius: 30PX;
   font-size: 16px;
   font-weight: 400;
+  box-shadow: 0 0 30px rgba(0, 0, 0, .5);
 
 }
 
@@ -128,19 +131,24 @@ button:hover {
 .slogan {
   margin-right: 10px;
   height:750px ;
-  width: 811px;
-  background-image: url('https://scontent.xx.fbcdn.net/v/t1.15752-9/367362172_1038320917120745_1840625855416476902_n.png?_nc_cat=100&cb=99be929b-3346023f&ccb=1-7&_nc_sid=510075&_nc_ohc=oZRGST0H080AX8GJHCd&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdT_cFH4Olbw1TfzUb9T_rZathpSB9eMhcd65HlInmhxbQ&oe=64FFF651');
+  width: 800px;
+  background-image: url('https://media.licdn.com/dms/image/C5603AQH57N3JQ7ph0w/profile-displayphoto-shrink_800_800/0/1651496670385?e=2147483647&v=beta&t=Ul5vEfHq7C8P7xJsjDj3wPW6rf_Lt6mmkib9Ji_E320');
 }
 
 .title{
-  margin-top: 280px;
-  color: white;
-  font-size:54px ;
-  font-weight:300 ;
+  margin-top: 310px;
+  color: whitesmoke;
+  font-size:60px ;
+  font-weight:600 ;
   text-align: left;
+  padding-left: 20px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, .5);
 
 }
-
+.link a{
+  text-decoration: none;
+  
+  }
 .button{
   
   text-align: center;
@@ -170,6 +178,3 @@ button:hover {
 
 
 }
-
-
-

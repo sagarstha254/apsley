@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Recipe1.css'; 
 
 
@@ -9,9 +9,10 @@ const Recipe = () => {
     <>
     <div className='main' id ="recipe"> 
       <div className="header">
-        <h1 className='h1'> Our Delicious and special recipe </h1>
-        <h1 className='h2'><b>Apslay Arms Hotel</b></h1>
-        <p> Food is any substance consumed by an organism for nutritional support.</p>
+        <h1 className='h1'> Our Delicious and Special Recipe </h1>
+        <h1 className='h2'><b>Apsley Arms Hotel</b></h1>
+        <p className='p'> The hotel's recipes make it unique in taste and stands out among other.<br />
+        <b>Customer once, Family the next</b></p>
         
       </div>
 
@@ -36,9 +37,9 @@ const Recipe = () => {
           <div><img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/359906928_1356589641879512_4157505613936760735_n.png?_nc_cat=104&cb=99be929b-3346023f&ccb=1-7&_nc_sid=aee45a&_nc_ohc=ylail5OPuD8AX-3QWrd&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdR0IhszQDRG9CoLYz0R7R-kx60KBYTziWXLWCJILHQ86w&oe=64F80C44" alt="Image 1" /></div>
           <div classname="descripton">
 
-            <h1 className="desh1"> Blanched Broccolin</h1>
+            <h1 className="desh1"> Broccolini</h1>
 
-            <p>Food is any substance consumed by an organism for nutritional support </p>
+            <p>Broccolini is milder and sweeter than broccoli, with firm, crunchy stems, and leafy florets </p>
           </div>
 
 
@@ -99,8 +100,8 @@ const Recipe = () => {
         </div>
 
         <div className="second">
-          <h1><b>Welcome to our <br></br>Apseley Arms Hotel</b></h1>
-          <p>The Apseley Arms Hotel is a charming and<br></br> luxurious establishment located in the heart of<br></br> a picturesque countryside. Nestled amidst <br></br>rolling hills and surrounded by lush greenery,<br></br> this hotel offers a serene and idyllic retreat for<br></br> travelers seeking both relaxation and <br></br>adventure.</p>
+          <h1><b>Welcome to our <br></br>Apsley Arms Hotel</b></h1>
+          <p>The Apsley Arms Hotel is a charming and<br></br> luxurious establishment located in the heart of<br></br> a picturesque countryside. Nestled amidst <br></br>rolling hills and surrounded by lush greenery,<br></br> this hotel offers a serene and idyllic retreat for<br></br> travelers seeking both relaxation and <br></br>adventure.</p>
           <br />
           <button className="button">Find more</button>
         </div>

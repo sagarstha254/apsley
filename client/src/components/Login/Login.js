@@ -87,14 +87,14 @@ function Login() {
                 <br />
                 <div className={styles.button}>
                   <button type="submit" className={styles.button}>
-                    Lets Go =
+                    Lets Go =>
                   </button>
                   <br />
                   <br />
                 </div>
                 <div className={styles.link}>
                   <p>
-                    Don't have an account
+                    Don't have an account?
                     <a href="/registration"> Register</a>
                   </p>
                 </div>

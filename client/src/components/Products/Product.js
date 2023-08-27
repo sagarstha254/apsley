@@ -25,7 +25,7 @@ export const Products = () => {
   return (
     <div>
       <Navbar />
-      <h1>Available Products</h1>
+      <h1 className={styles.head}>Available Products</h1>
       {products
         ? products.map((Product) => (
             <div className={styles.main} key={Product._id}>
