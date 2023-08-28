@@ -1,42 +1,42 @@
 import React, { useEffect, useState } from "react";
 import styles from "./AdminProducts.module.css";
 import AdminNavBar from "./AdminNavBar";
+import api_url from "../../config";
 
 export default function AdminProducts() {
   const [number, setnumber] = useState("");
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
-  const [image, setimage] = useState("");
   const [roomType, setroomType] = useState("");
   const [message, setMessage] = useState("");
   const [roomList, setRoomList] = useState([]);
+  const [file, setfile] = useState();
 
   //Insert a room data
   async function handleSubmit(e) {
     e.preventDefault();
 
-    const userData = {
-      number: number,
-      roomType: roomType,
-      description: description,
-      price: price,
-      image: image,
-    };
+    const formData = new FormData();
+    formData.append("number", number);
+    formData.append("roomType", roomType);
+    formData.append("description", description);
+    formData.append("price", price);
+    formData.append("roomImage", file);
+
     const token = localStorage.getItem("token");
     try {
-      const response = await fetch("http://localhost:8081/admin/room", {
+      const response = await fetch(`${api_url}/admin/room`, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
-          "Authorization": `Bearer ${token}`,
+          Authorization: `Bearer ${token}`,
         },
-        body: JSON.stringify(userData),
+        body: formData,
       });
 
       const data = await response.json();
       setMessage(data.message);
       // Update the productList state with the newly added product
-      setRoomList((prevroomList) => [...prevroomList, userData]);
+      setRoomList((prevroomList) => [...prevroomList, formData]);
     } catch (error) {
       console.error(error);
     }
@@ -44,25 +44,25 @@ export default function AdminProducts() {
 
   //Update a product
   async function update(id) {
-    const userData = {
-      roomId : `${id}`,
-      number: number,
-      description: description,
-      price: price,
-      roomType: roomType,
-      image: image,
-    };
+    
+    const formData = new FormData();
+    formData.append("roomId",`${id}`);
+    formData.append("number", number);
+    formData.append("roomType", roomType);
+    formData.append("description", description);
+    formData.append("price", price);
+    formData.append("roomImage", file);
+
 
     const token = localStorage.getItem("token");
 
     try {
-      const response = await fetch(`http://localhost:8081/admin/room/${id}`, {
+      const response = await fetch(`${api_url}/admin/room/${id}`, {
         method: "PUT",
         headers: {
-          "Content-Type": "application/json",
-          "Authorization": `Bearer ${token}`,
+          Authorization: `Bearer ${token}`,
         },
-        body: JSON.stringify(userData),
+        body: formData,
       });
 
       const data = await response.json();
@@ -71,7 +71,7 @@ export default function AdminProducts() {
       // Update the roomlist state with the updated room
       setRoomList((prevroomList) =>
         prevroomList.map((room) =>
-          room._id === id ? { ...room, ...userData } : room
+          room._id === id ? { ...room, ...formData } : room
         )
       );
     } catch (error) {
@@ -82,11 +82,11 @@ export default function AdminProducts() {
   async function remove(id) {
     const token = localStorage.getItem("token");
     try {
-      const response = await fetch(`http://localhost:8081/admin/room/${id}`, {
+      const response = await fetch(`${api_url}/admin/room/${id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": `Bearer ${token}`,
+          Authorization: `Bearer ${token}`,
         },
       });
 
@@ -106,7 +106,7 @@ export default function AdminProducts() {
   useEffect(() => {
     const getRooms = async () => {
       try {
-        const response = await fetch("http://localhost:8081/rooms", {
+        const response = await fetch(`${api_url}/rooms`, {
           method: "GET",
         });
 
@@ -148,21 +148,21 @@ export default function AdminProducts() {
               placeholder="Enter your room type"
               name="type"
               className={styles.box}
-              onChange={(e) => setDescription(e.target.value)}
+              onChange={(e) => setroomType(e.target.value)}
             ></input>
             <input
               type="text"
               placeholder="Enter your room description"
               name="description"
               className={styles.box}
-              onChange={(e) => setroomType(e.target.value)}
+              onChange={(e) => setDescription(e.target.value)}
             ></input>
             <input
               type="file"
               accept="image/png,image/jpg,image/jpeg"
-              name="image"
+              filename={file}
               className={styles.box}
-              onChange={(e) => setimage(e.target.value)}
+              onChange={(e) => setfile(e.target.files[0])}
             ></input>
             <input
               type="submit"
@@ -191,8 +191,12 @@ export default function AdminProducts() {
                   <tbody>
                     <tr>
                       <td>
-                        <img src={i.image} />
-                      </td>
+                      <img
+                              src={`${api_url}/images/rooms/${i.image}`}
+                              alt={i.name}
+                              height={90}
+                              width={90}
+                            />                      </td>
                       <td>{i.number}</td>
                       <td>{i.price}</td>
                       <td>{i.roomType}</td>

@@ -13,7 +13,7 @@ router.post("/signup", validateSignup, userController.signup);
 router.post("/login", validateLogin, userController.login);
 
 // Route for user logout
-router.post("/logout", validateLogin, userController.logout);
+router.delete("/logout", validateLogin, userController.logout);
 
 // Fetch all user
 router.get("/user", userController.getuser);

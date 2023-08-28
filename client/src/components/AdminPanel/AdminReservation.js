@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import AdminNavBar from "./AdminNavBar";
 import styles from "./AdminProducts.module.css";
+import api_url from "../../config";
 
 const AdminReservation = () => {
   const [message, setMessage] = useState("");
@@ -11,7 +12,7 @@ const AdminReservation = () => {
     const getreservation = async () => {
       try {
         const response = await fetch(
-          "http://localhost:8081/admin/reservations",
+          `${api_url}/admin/reservations`,
           {
             method: "GET",
           }
@@ -30,7 +31,7 @@ const AdminReservation = () => {
     const token = localStorage.getItem("token");
     try {
       const response = await fetch(
-        `http://localhost:8081/admin/reservation/${id}`,
+        `${api_url}/admin/reservation/${id}`,
         {
           method: "DELETE",
           headers: {"Content-Type":"applicaton/json", "Authorization": `Bearer ${token}`},
@@ -53,6 +54,7 @@ const AdminReservation = () => {
     <div>
       <AdminNavBar />
       AdminCustomerList
+      <h3>{message}</h3>
       <div className={styles.productdisplay}>
         <table className={styles.productdisplaytable}>
           <thead>

@@ -1,10 +1,15 @@
 const { validationResult } = require("express-validator");
-
 const errorHandler = require("../middlewares/error-handler");
 const clearImage = require("../utils/clear-image");
-
+const multer = require("multer");
+const upload = multer();
 const Product = require("../models/product");
 const { connect } = require("mongoose");
+const express = require("express");
+const app = express();
+
+const fs = require("fs");
+const path = require("path");
 
 //Create new product
 exports.postProduct = async (req, res, next) => {
@@ -15,15 +20,17 @@ exports.postProduct = async (req, res, next) => {
       const errorMessage = errors.array()[0].msg;
       return errorHandler(errorMessage, 422);
     }
-    if (!req.body.image) {
+    if (!req.file.filename) {
       return errorHandler("Please provide a image.", 422);
     }
+
 
     // Extract input data
     const name = req.body.name;
     const description = req.body.description;
     const price = req.body.price;
-    const image = req.body.image;
+    const image = req.file.filename;
+    
 
     // Create new product
     const product = new Product({
@@ -65,7 +72,6 @@ exports.getProducts = async (req, res, next) => {
     if (!products) {
       return errorHandler("No product added yet.", 404);
     }
-
     // Send response
     res.status(200).json({
       message: "Products fetched successfully.",
@@ -118,11 +124,10 @@ exports.updateProduct = async (req, res, next) => {
     const name = req.body.name;
     const description = req.body.description;
     const price = req.body.price;
-    let image = req.body.image;
-    console.log(price,"dfa");
+    let image = req.file.filename;
 
-    if (req.body.image) {
-      image = req.body.image;
+    if (req.file.filename) {
+      image = req.file.filename;
     }
     if (!image) {
       errorHandler("No file picked.", 422);

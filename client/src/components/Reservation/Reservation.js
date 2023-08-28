@@ -1,10 +1,17 @@
 import { useState } from "react";
 import styles from "./Reservation.module.css";
 import FormInput from "./FormInput";
+import api_url from "../../config";
+import { useNavigate } from "react-router-dom";
+import Footer from "../Footer/Footer";
+import Header from "../Navbar/Navbar";
 
 const Registration = () => {
   const searchParams = new URLSearchParams(window.location.search);
   const roomId = searchParams.get("roomId");
+  const [message, setMessage] = useState("");
+  const navigate = useNavigate();
+
   const [values, setValues] = useState({
     username: "",
     phone: "",
@@ -77,7 +84,7 @@ const Registration = () => {
 
     const token = localStorage.getItem("token");
     try {
-      const response = await fetch("http://localhost:8081/reservation", {
+      const response = await fetch(`${api_url}/reservation`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -87,31 +94,44 @@ const Registration = () => {
       });
 
       const data = await response.json();
+      setMessage(data.message);
+
+      setTimeout(() => {
+        navigate("/"); // Navigate to "/home-page" after 3 seconds
+      }, 2000);
+
+
     } catch (error) {
       console.log(error);
     }
   };
 
   const onChange = (e) => {
-    console.log(e.target.name);
     setValues({ ...values, [e.target.name]: e.target.value });
   };
 
   return (
-    <div className={styles.Registration}>
+    <>
+    <Header />
+      <div className={styles.Registration}>
       <form onSubmit={handleSubmit}>
         <h1>Booking Room</h1>
-        {inputs.map((input) => (
+        <h1>{message}</h1>
+        {inputs.map((input)  => (
           <FormInput
             key={input.id}
             {...input}
             value={values[input.name]}
             onChange={onChange}
+            className="input1"
+
           />
         ))}
         <button className={styles.Submit}>Submit</button>
       </form>
     </div>
+    <Footer noLogo />
+    </>
   );
 };
 

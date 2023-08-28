@@ -1,26 +1,124 @@
 *{
-  padding: 0;
-  margin: 0;
-  text-decoration:none ;
+  box-sizing: border-box;
+}
+
+.image {
+  height: 90px;
+}
+.image img {
+  height: 90px;
+  width: 90%;
+  background-color: black;
+  margin-top: 10%;
+}
+.container {
+  max-width: 1170px;
+  margin: auto;
+  margin-top: -5%;
+  margin-bottom: 50px;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+ul {
   list-style: none;
-  font-family: 'work sans',sans-serif;
-
+}
+.footer {
+  margin-top: 70px;
+  background-color: white;
+  padding: 10px 0 60px 0;
 }
 
-body{
-  height: 100px;
-
+.Desc {
+  margin-right: 18%;
+  color: black;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
 }
 
-section{
-  padding: 100px;
-height: 100px;
-
+.h1 {
+  color: black;
+  font-size: 25px;
+  font-weight: 700;
 }
 
-.footer{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, auto));
-  gap:3.5rem;
-  background: green;
+.footercol {
+  width: 19%;
+  box-sizing: border-box;
+}
+.footercol h4 {
+  font-size: 16px;
+  color: Black;
+  text-transform: capitalize;
+  margin-bottom: 35px;
+  font-weight: 700;
+  position: relative;
+}
+.footercol h4::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  background-color: #bbbbbb;
+  height: 2px;
+  box-sizing: border-box;
+  width: 80px;
+}
+.footercol ul li:not(:last-child) {
+  margin-bottom: 10px;
+}
+.footercol ul li a {
+  font-size: 16px;
+  text-transform: capitalize;
+  color: Black;
+  text-decoration: none;
+  font-weight: 400;
+  display: block;
+  transition: all 0.3s ease;
+}
+.footercol ul li a:hover {
+  color: #bbbbbb;
+  padding-left: 8px;
+}
+.footercol .sociallinks a {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: #24262b solid 2px;
+  margin: 0 20px 20px 0;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: #24262b;
+  transition: all 0.5s ease;
+}
+.footercol .sociallinks a:hover {
+  color: #bbbbbb;
+  background-color: #ffffff;
+}
+
+/*responsive*/
+@media (max-width: 767px) {
+  .footercol {
+    width: 50%;
+    margin-bottom: 30px;
+  }
+  .image {
+    height: 200px;
+  }
+  .Desc {
+    margin-left: 10%;
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 574px) {
+  .image {
+    height: 150px;
+  }
+  .footercol {
+    width: 100%;
+  }
 }

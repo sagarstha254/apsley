@@ -1,75 +1,87 @@
 /* Navbar.css */
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .navbar img {
-    height: 80px;
-  }
-  
-  .navbar ul {
-    list-style: none;
-    display: flex;
-  }
-  
-  .navbar ul li {
-    margin-right: 10px;
-    padding-left: 20px;
-  }
-  
-  .navbar ul li a {
-    font-weight: 600;
-    font-size: 15px;
-    text-decoration: none;
-    color: #333;
-  }
-  
-  .special-offer-button {
-    background-color: #DAE952;
-    color: #333;
-    border: none;
-    border-radius: 10px;
-    width: 155.311px;
-    height: 40px;
-    position: absolute;
-    top:21px;
-    left: 52%;
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    font-weight: bold;
-}
-  
-  
-  .navbar .contact-info {
-    margin-right: -45px;
-    font-family: 'Inter', sans-serif;
-    font-size: 17px;
-    color: #333;
-    font-weight: bold;
-  }
-  
-  .navbar .contact-info svg {
-    margin-right: 5px;
-  }
-  
-  .corner-menu {
-    display: flex;
-    justify-content: space-between;
-    margin-right:150px;
-  }
-  
-  .corner-menu a{
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: black;
-    border: 2px solid black;
-    border-radius: 35px;
-    margin-left: 76px;
-    width: 30px;
-    height: 30px;
-  }
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar img {
+  height: 80px;
+  margin-left: 20%;
+  margin-top: 10%;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+}
+
+.navbar ul li {
+  margin-right: 10px;
+  padding-left: 20px;
+}
+
+.navbar ul li a {
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  color: #333;
+}
+
+
+
+
+.navbar .contact-info {
+  margin-right: -80px;
+  font-family: 'Inter', sans-serif;
+  font-size: 17px;
+  color: #333;
+  font-weight: bold;
+}
+
+.navbar .contact-info svg {
+  margin-right: 5px;
+}
+
+.corner-menu {
+  display: flex;
+  justify-content: space-between;
+  margin-right:150px;
+}
+
+.corner-menu a{
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  border: 2px solid black;
+  border-radius: 35px;
+  margin-left: 76px;
+  width: 40px;
+  height: 40px;
+  margin-top: 1%;
+}
+
+
+.button{margin-right: -25%;}
+.button button{
+
+display: inline-block;
+height: 40px;
+width: 40px;
+background-color: rgba(255, 255, 255, 0.2);
+border: #24262b solid 2px;
+margin: 2px 20px 20px 0;
+text-align: center;
+line-height: 40px;
+border-radius: 50%;
+color:#24262b; 
+
+transition: all 0.5s ease;
+
+}

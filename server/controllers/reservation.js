@@ -171,7 +171,7 @@ exports.deleteReservation = async (req, res, next) => {
     await Reservation.findByIdAndRemove(reservationId);
 
     //Send response
-    res.status(200).json({ messge: "Reservation deleted." });
+    res.status(200).json({ message: "Reservation Deleted." });
   } catch (err) {
     if (!err.statusCode) {
       err.statusCode = 500;
