@@ -14,9 +14,11 @@ const reservationRoutes = require("./routes/reservation");
 const app = express();
 
 
-app.use("/", (res,req)=>{
-  res.json({message:"hey there !! you did it"})
+app.use("/", (req,res)=>{
+  res.json({message:"hey there !! you did it"});
 });
+
+
 //General Middleware
 app.use(express.json());
 
