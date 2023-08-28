@@ -13,6 +13,10 @@ const reservationRoutes = require("./routes/reservation");
 //Express Application
 const app = express();
 
+
+app.use("/", (res,req)=>{
+  res.json({message:"hey there !! you did it"})
+});
 //General Middleware
 app.use(express.json());
 
