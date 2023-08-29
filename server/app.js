@@ -17,7 +17,7 @@ const app = express();
 
 app.use(cors(
   {
-    origin:["https://apsley-beta.vercel.app"],
+    origin:process.env.CORS_LIST,
     methods:["OPTIONS", "GET", "POST", "PUT", "PATCH", "DELETE"],
     credentials: true
   }
