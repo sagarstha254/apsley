@@ -23,7 +23,7 @@ app.use(cors(
   }
 ));
 
-app.use("/", (req,res)=>{
+app.get("/", (req,res)=>{
   res.json({message:"hey there !! you did it"});
 });
 
