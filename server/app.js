@@ -17,7 +17,7 @@ const app = express();
 
 app.use(cors(
   {
-    origin:["https://apsley-git-dev-sagarstha254.vercel.app"],
+    origin:["https://apsley-beta.vercel.app"],
     methods:["OPTIONS", "GET", "POST", "PUT", "PATCH", "DELETE"],
     credentials: true
   }
