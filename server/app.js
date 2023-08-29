@@ -3,6 +3,7 @@ require("dotenv").config();
 const path = require("path");
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require('cors');
 
 //Local Imports
 const userRoutes = require("./routes/user");
@@ -14,6 +15,14 @@ const reservationRoutes = require("./routes/reservation");
 const app = express();
 
 
+app.use(cors(
+  {
+    origin:[""],
+    methods:["OPTIONS", "GET", "POST", "PUT", "PATCH", "DELETE"],
+    credentials: true
+  }
+));
+
 app.use("/", (req,res)=>{
   res.json({message:"hey there !! you did it"});
 });
@@ -24,7 +33,6 @@ app.use(express.json());
 
 //CORS Headers
 
-app.use(cors());
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "https://apsley-git-dev-sagarstha254.vercel.app/");
   res.setHeader(
@@ -62,4 +70,3 @@ mongoose
   })
   .catch((error) => console.log(error));
 
-export default app;
