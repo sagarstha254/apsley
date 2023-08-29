@@ -17,7 +17,7 @@ const Footer = () => {
             <div className={styles.Desc}>
               <div className={styles.title}>
                 <div className={styles.image}>
-                  <img src="images/logo.png" alt="Logo" />  
+                  <img src="Images/logo.png" alt="Logo" />  
                 </div>
 
                 <></>

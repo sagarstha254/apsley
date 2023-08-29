@@ -35,7 +35,7 @@ https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css
       />
       <nav className={styles.navbar}>
         <div className={styles.image}>
-          <img src="images/logo.png" alt="Apsley Arms Hotel" />
+          <img src="Images/logo.png" alt="Apsley Arms Hotel" />
         </div>
 
         <div>
