@@ -24,7 +24,7 @@ app.use(cors(
 ));
 
 app.get("/", (req,res)=>{
-  res.json({message:"hey there !! you did it"});
+  res.json({message:"looking for something"});
 });
 
 
