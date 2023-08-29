@@ -34,7 +34,7 @@ app.use(express.json());
 //CORS Headers
 
 app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "https://apsley-git-dev-sagarstha254.vercel.app/");
+  res.setHeader("Access-Control-Allow-Origin", "apsley-beta.vercel.app");
   res.setHeader(
     "Access-Control-Allow-Methods",
     "OPTIONS, GET, POST, PUT, PATCH, DELETE"
