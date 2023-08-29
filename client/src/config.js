@@ -1,2 +1,2 @@
-const API_URL = "https://apsley-server-git-dev-sagarstha254.vercel.app";
+const API_URL = "https://apsley-dev-api.onrender.com";
 export default API_URL;
