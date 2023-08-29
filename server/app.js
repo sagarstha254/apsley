@@ -14,14 +14,12 @@ const reservationRoutes = require("./routes/reservation");
 //Express Application
 const app = express();
 
+app.use(cors(x => x
+  .AllowAnyMethod()
+  .AllowAnyHeader()
+  .SetIsOriginAllowed(origin => true) 
+  .AllowCredentials()));
 
-app.use(cors(
-  {
-    origin:process.env.CORS_LIST,
-    methods:["OPTIONS", "GET", "POST", "PUT", "PATCH", "DELETE"],
-    credentials: true
-  }
-));
 
 app.get("/", (req,res)=>{
   res.json({message:"looking for something"});
