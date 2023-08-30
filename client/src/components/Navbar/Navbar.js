@@ -15,7 +15,6 @@ const Navbar = () => {
         method: "delete",
         headers: { 
           "Content-Type": "application/json",
-          "Authorization" :"",
          },
       });
       const data = await response.json();
