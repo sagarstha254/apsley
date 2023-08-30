@@ -9,7 +9,7 @@ export const Accomodation = () => {
   const navigate = useNavigate();
   const [rooms, setRooms] = useState("");
 
-  async function fetchProduct() {
+  async function fetchrooms() {
     try {
       const response = await fetch(`${api_url}/rooms`);
       const responseData = await response.json();
@@ -20,7 +20,7 @@ export const Accomodation = () => {
   }
 
   useEffect(() => {
-    fetchProduct();
+    fetchrooms();
   }, []);
 
   return (
