@@ -17,7 +17,6 @@ const Navbar = () => {
           "Content-Type": "application/json",
          },
       });
-      const data = await response.json();
     if (response.ok) localStorage.removeItem("token");
     if (response.ok) alert("logged Out");
 

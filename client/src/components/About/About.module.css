@@ -96,6 +96,7 @@
   border-radius: 35px;
   text-align: center;
   padding-top: 130px;
+  background-size: 100% 500px;
 }
 
 .h3 {
@@ -119,8 +120,6 @@
     height: 1090px;
   }
 
-  .content {
-  }
   .Heading {
     width: 100%;
     text-align: center;
@@ -132,11 +131,22 @@
   }
 
   .photo {
+    margin-top: 20px;
     width: 100%;
     background-color: white;
     height: 650px;
   }
   .photo img {
     float: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .background {
+    padding-top: 30px;
+  }
+
+  .title {
+    padding: 10px;
   }
 }
