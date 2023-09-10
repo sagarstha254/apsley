@@ -97,7 +97,7 @@ const Registration = () => {
       setMessage(data.message);
 
       setTimeout(() => {
-        navigate("/"); // Navigate to "/home-page" after 3 seconds
+        navigate("/accomodation"); // Navigate to "/accomodation" after 3 seconds
       }, 2000);
 
 
