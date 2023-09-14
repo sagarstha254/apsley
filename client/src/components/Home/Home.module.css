@@ -5,7 +5,7 @@
 
   }
   
-  
+
   .content {
     position: relative;
     display: flex;
@@ -33,7 +33,6 @@
   
   .title {
     color: #000;
-    font-family: Inter;
     font-size: 78px;
     font-style:normal;
     font-weight: 600;
@@ -42,17 +41,28 @@
     top: 20%;
     left:10%
   }
+
+  
   .slogan {
     font-family: 'Inter', sans-serif;
     font-weight: 600;
     font-size: 2.5rem;
-    color: #555;
+    color: black;
     text-align: center;
     position: absolute;
-    top: 40%;
+    top: 60%;
     left:10%
   }
-  
+  .slogan1{
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 2.rem;
+    color: black;
+    text-align: center;
+    position: absolute;
+    top: 38%;
+    left:12%
+  }
   .button {
   background-color: #DAE952;
   color: #333;
@@ -62,8 +72,8 @@
   width: 229px;
   height: 58px;
   position: absolute;
-  top:60%;
-  left:13%;
+  top:75%;
+  left:17%;
   font-family: 'Inter', sans-serif;
   font-size: 16px;
   font-weight: bold;

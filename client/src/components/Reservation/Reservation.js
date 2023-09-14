@@ -93,6 +93,9 @@ const Registration = () => {
         body: JSON.stringify(values),
       });
 
+      if(response.status === 401){
+        return navigate("/login")
+      }
       const data = await response.json();
       setMessage(data.message);
 

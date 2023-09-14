@@ -1,56 +1,64 @@
-/* Navbar.css */
-
-
-
-
-.navbar {
+.NavbarItem {
+  background-color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.navbar img {
+  padding: 0 30px;
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.25);
+  width: 95%;
   height: 80px;
-  margin-left: 20%;
-  margin-top: 10%;
+  border-radius: 13px;
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 9999;
+}
+.image img {
+  height: 60px;
+  width: 100px;
+  
+ 
+  
 }
 
-.navbar ul {
+.Navmenu {
+  display: grid;
+  grid-template-columns: repeat(7, auto);
+  grid-gap: 10px;
   list-style: none;
-  display: flex;
+  align-items: center;
 }
 
-.navbar ul li {
-  margin-right: 10px;
-  padding-left: 20px;
-}
-
-.navbar ul li a {
-  font-weight: 600;
-  font-size: 15px;
+.NavLinks {
   text-decoration: none;
-  color: #333;
+  color: black;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  white-space: nowrap;
 }
 
-
-
-
-.navbar .contact-info {
-  margin-right: -80px;
-  font-family: 'Inter', sans-serif;
-  font-size: 17px;
-  color: #333;
-  font-weight: bold;
+.NavLinks i {
+  padding-right: 10px;
 }
+.NavLinks:hover {
+  background-color: black;
+  color: white;
+  border-radius: 4px;
+  transition: all o.2s ease-in-out;
+}
+.pop{margin-top: -30px;}
 
-.navbar .contact-info svg {
-  margin-right: 5px;
+.MenuIcons {
+  display: none;
 }
 
 .corner-menu {
   display: flex;
   justify-content: space-between;
-  margin-right:150px;
+  margin-right:30px;
+  margin-top:2%;
 }
 
 .corner-menu a{
@@ -64,11 +72,12 @@
   margin-left: 76px;
   width: 40px;
   height: 40px;
-  margin-top: 1%;
+  
 }
 
 
-.button{margin-right: -25%;}
+.button{margin-right: -20%;
+  margin-top:-1%;}
 .button button{
 
 display: inline-block;
@@ -83,5 +92,97 @@ border-radius: 50%;
 color:#24262b; 
 
 transition: all 0.5s ease;
+
+}
+
+@media screen and (max-width: 1300px) {
+  .Navmenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: white;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    opacity: 0;
+    align-items: stretch;
+    padding: 80px 0 30px 0;
+    margin: 0;
+    transition: 0.3s ease-in-out;
+    border-radius: 13px;
+  }
+
+  .Navmenu.active {
+    left: 0;
+    opacity: 1;
+    z-index: -1;
+    transition: 0.3s ease-in-out;
+  }
+
+  .NavLinks {
+    display: block;
+    widows: 100%;
+    font-size: 1.2rem;
+    padding: 1rem ;
+  }
+
+  .pop{display: block;
+    widows: 100%;
+    margin-left: 43%;
+    padding: 2rem 0;
+
+  }
+  .NavLinks:hover {
+    background-color: black;
+    transition: none;
+  }
+  .NavbarItem {
+   
+    z-index: 99;
+  }
+  .MenuIcons {
+    display: block;
+    cursor: pointer;
+    margin-right: -110%;
+  }
+  li {
+    display: block;
+    margin: 0 auto;
+  }
+  .MenuIcons i {
+    font-size: 1.2rem;
+  }
+  .corner-menu {margin-right:100px;}
+}
+
+@media screen and (max-width: 600px) {
+
+  .MenuIcons {
+    display: block;
+    cursor: pointer;
+    margin-right: -130%;
+  }
+  .corner-menu {
+    display: flex;
+    justify-content: space-between;
+    margin-right:60px;
+    margin-top:5%;
+  }
+  .corner-menu a{
+    width: 35px;
+    height: 35px;
+  }
+
+  .button button{
+  height: 35px;
+  width: 35px;
+  
+  }
+  .pop{
+    margin-left: 35%;
+
+  }
 
 }

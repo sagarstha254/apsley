@@ -1,3 +1,7 @@
+
+body {
+  font-family: "Inter", sans-serif;
+}
 .main {
   background-image: url("https://scontent.xx.fbcdn.net/v/t1.15752-9/367428643_838134554152661_2595217359839298837_n.png?_nc_cat=101&cb=99be929b-3346023f&ccb=1-7&_nc_sid=510075&_nc_ohc=o0KIXqoa0vwAX9UmTeV&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdSXUq1LETXMJi5tbB3QMCpdmG4oqN4JvT3t1uFTMDKx5A&oe=6501AD26");
   margin-top: 2%;
@@ -28,6 +32,7 @@
 
 .p {
   color: #4e8445;
+  
 }
 .header p {
   font-size: 20px;

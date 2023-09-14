@@ -103,7 +103,7 @@ function Registration() {
                 </div> 
                 <div className={styles.link}>
                 <a className={styles.a} href="https://www.google.com">Sign up with Google</a> <br /><br/>
-                <a className={styles.a} href="https://www.google.com">Sign up with facebook</a><br/>
+                <a className={styles.a} href="https://www.facebook.com">Sign up with facebook</a><br/>
                 
                 <p>Already have an account? <a href="/login">Login</a></p>
               </div>

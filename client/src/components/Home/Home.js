@@ -28,6 +28,8 @@ const Home = () => {
         <div className={styles.content}>
           <div className={styles.left}>
             <h1 className={styles.title}>All Delicious</h1>
+            <h2 className={styles.slogan1}>Serving Food and Accommodation <br />Since 1849</h2>
+
             <h2 className={styles.slogan}>Enjoy luxury and comfort</h2>
             <button className={styles.button}>Find For More</button>
           </div>

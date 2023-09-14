@@ -85,6 +85,7 @@
   font-size: 40px;
   font-weight: 600;
   font-family: "Inter", sans-serif;
+  margin-top: -2%;
 }
 
 .background {
@@ -100,10 +101,11 @@
 }
 
 .h3 {
-  color: white;
-  font-size: 64px;
+  color: black;
+  font-size: 50px;
   font-weight: 700;
   font-family: "Inter", sans-serif;
+  margin-bottom: -2%;
 }
 
 .h2 p {
@@ -119,7 +121,9 @@
   .main {
     height: 1090px;
   }
-
+  .h2 {
+    margin-top: 3%;
+  }
   .Heading {
     width: 100%;
     text-align: center;
@@ -140,7 +144,14 @@
     float: none;
   }
 }
-
+@media (max-width: 800px) {
+  .hotel {
+    height: 2250px;
+  }
+  .h2 {
+    margin-top: 3%;
+  }
+}
 @media (max-width: 600px) {
   .background {
     padding-top: 30px;
