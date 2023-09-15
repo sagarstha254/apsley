@@ -5,11 +5,12 @@ import Recipe from "../Recipe/Recipe";
 import About from "../About/About";
 import About1 from "../About/About1";
 import Footer from "../Footer/Footer";
+import { HashLink as Link } from "react-router-hash-link";
 
 const Home = () => {
   return (
     <>
-      <div className= {styles.section}>
+      <div className={styles.section}>
         <Navbar />
         <div className={styles.bigSvg}>
           <svg
@@ -28,10 +29,15 @@ const Home = () => {
         <div className={styles.content}>
           <div className={styles.left}>
             <h1 className={styles.title}>All Delicious</h1>
-            <h2 className={styles.slogan1}>Serving Food and Accommodation <br />Since 1849</h2>
+            <h2 className={styles.slogan1}>
+              Serving Food and Accommodation <br />
+              Since 1849
+            </h2>
 
             <h2 className={styles.slogan}>Enjoy luxury and comfort</h2>
-            <button className={styles.button}>Find For More</button>
+            <Link smooth to="/#recipe">
+              <button className={styles.button}>Find For More</button>
+            </Link>
           </div>
           <div className={styles.image1}>
             <img src="./Images/food.png" alt="Image 1" />
@@ -111,7 +117,6 @@ const Home = () => {
         <About />
         <About1 />
         <Footer />
-
       </div>
     </>
   );

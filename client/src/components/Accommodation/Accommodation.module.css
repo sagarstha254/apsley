@@ -1,88 +1,191 @@
-.main{
-    width: 100%;
-    margin-top: 80px;
-    margin-bottom: 30px;
-  
-  }
+.main {
+  width: 100%;
+  margin-top: 40px;
+}
+.head {
+  margin-top: 10%;
+  text-align: center;
+}
 
-  .inner{
+.inner {
   width: 80%;
   height: 500px;
   background-color: aliceblue;
   border-radius: 18px;
   margin-left: 10%;
   padding-left: 45px;
-  padding-top: 10px;
+  padding-top: 25px;
   box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.25);
-
 }
 
-.title{width: 40%;
+.title {
+  width: 40%;
 }
 
+.h1 {
+  text-align: left;
+  color: black;
+}
 
-.h1{text-align: left;
-color: black;}
-
-
-.innermain{
+.innermain {
   width: 98%;
   height: 350px;
   display: flex;
   margin-top: 25px;
-
 }
 
-.desc{
+.desc {
   padding-left: 20px;
   padding-top: 25px;
   width: 30%;
   height: 300px;
   text-align: left;
-  
 }
-.book{
+.book {
   width: 94%;
   height: 100px;
   padding-top: 18%;
   padding-left: 15%;
-  
 }
-.book button{
-  height:40px;
+.book button {
+  height: 40px;
   width: 150px;
-  background-color:Black;
+  background-color: Black;
   overflow: hidden;
   border: solid;
   border-color: white;
-  color:whitesmoke; 
+  color: whitesmoke;
   text-decoration: none;
-  border-radius: 30PX;
+  border-radius: 30px;
   font-size: 16px;
   font-weight: 400;
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.25);
 }
 
-.book button:hover{
+.book button:hover {
   background-color: #ddd;
   color: black;
   border-color: black;
 }
-.head{
-  text-align: center;
-}
-.photo{
+
+.photo {
   margin-left: 10%;
   width: 68%;
   height: 350px;
   margin-top: -6%;
-  
-  
-
 }
 
-.photo img{
-  height:400px ;
+.photo img {
+  height: 400px;
   width: 100%;
   border-radius: 10px;
   box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.25);
+}
+
+
+
+@media screen and (max-width: 1200px) {
+  .inner {
+    width: 90%;
+    height: 300px;
+    background-color: aliceblue;
+    border-radius: 18px;
+    margin-left: 5%;
+    padding-left: 15px;
+    padding-top: 25px;
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.25);
+  }
+  .head {
+    margin-top: 12%;
+  }
+
+  .title {
+    width: 40%;
+    font-size: x-small;
+  }
+
+  .h1 {
+    text-align: left;
+    color: black;
+  }
+
+  .desc {
+
+    padding-left: 10px;
+    padding-top: 5px;
+    width: 50%;
+    height: 300px;
+    text-align: left;
+    font-size: x-small;
+  }
+ 
+
+  .photo {
+    margin-left: 10%;
+    width: 100%;
+    height: 200px;
+    margin-top: -10%;
+  }
+
+  .photo img {
+    height: 250px;
+    width: 100%;
+    transition: 0.3s ease-in-out;
+  }
+  .book {
+    width: 94%;
+    height: 100px;
+    padding-top: 15%;
+    padding-left: 5%;
+  }
+  .book button {
+    height: 30px;
+    width: 100px;
+    font-size: 13px;
+    font-weight: 400;
+    transition: 0.3s ease-in-out;
+  }
+}
+@media screen and (max-width: 800px) {
+  .photo img {
+    height: 190px;
+    width: 100%;
+    transition: 0.3s ease-in-out;
+  }
+  .desc{
+    margin-top: -6%;
+  }
+  .head {
+    margin-top: 20%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .photo {
+    margin-left: 2%;
+    width: 100%;
+    height: 200px;
+    margin-top: -8%;
+  }
+
+  .head {
+    margin-top: 20%;
+  }
+  .photo img {
+    height: 150px;
+    width: 101%;
+  }
+
+  .book {
+    width: 94%;
+    height: 100px;
+    padding-top: 10%;
+    padding-left: 5%;
+  }
+  .book button {
+    height: 25px;
+    width: 75px;
+    font-size: 10px;
+    font-weight: 400;
+  }
 }

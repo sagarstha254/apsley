@@ -17,9 +17,6 @@
 .image img {
   height: 60px;
   width: 100px;
-  
- 
-  
 }
 
 .Navmenu {
@@ -48,7 +45,9 @@
   border-radius: 4px;
   transition: all o.2s ease-in-out;
 }
-.pop{margin-top: -30px;}
+.pop {
+  margin-top: -30px;
+}
 
 .MenuIcons {
   display: none;
@@ -57,12 +56,11 @@
 .corner-menu {
   display: flex;
   justify-content: space-between;
-  margin-right:30px;
-  margin-top:2%;
+  margin-right: 30px;
+  margin-top: 2%;
 }
 
-.corner-menu a{
-
+.corner-menu a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -72,27 +70,24 @@
   margin-left: 76px;
   width: 40px;
   height: 40px;
-  
 }
 
-
-.button{margin-right: -20%;
-  margin-top:-1%;}
-.button button{
-
-display: inline-block;
-height: 40px;
-width: 40px;
-background-color: rgba(255, 255, 255, 0.2);
-border: #24262b solid 2px;
-margin: 2px 20px 20px 0;
-text-align: center;
-line-height: 40px;
-border-radius: 50%;
-color:#24262b; 
-
-transition: all 0.5s ease;
-
+.button {
+  margin-right: -20%;
+  margin-top: -1%;
+}
+.button button {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: #24262b solid 2px;
+  margin: 2px 20px 20px 0;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: #24262b;
+  transition: all 0.5s ease;
 }
 
 @media screen and (max-width: 1300px) {
@@ -125,21 +120,20 @@ transition: all 0.5s ease;
     display: block;
     widows: 100%;
     font-size: 1.2rem;
-    padding: 1rem ;
+    padding: 1rem;
   }
 
-  .pop{display: block;
+  .pop {
+    display: block;
     widows: 100%;
     margin-left: 43%;
     padding: 2rem 0;
-
   }
   .NavLinks:hover {
     background-color: black;
     transition: none;
   }
   .NavbarItem {
-   
     z-index: 99;
   }
   .MenuIcons {
@@ -154,11 +148,12 @@ transition: all 0.5s ease;
   .MenuIcons i {
     font-size: 1.2rem;
   }
-  .corner-menu {margin-right:100px;}
+  .corner-menu {
+    margin-right: 100px;
+  }
 }
 
 @media screen and (max-width: 600px) {
-
   .MenuIcons {
     display: block;
     cursor: pointer;
@@ -167,22 +162,19 @@ transition: all 0.5s ease;
   .corner-menu {
     display: flex;
     justify-content: space-between;
-    margin-right:60px;
-    margin-top:5%;
+    margin-right: 60px;
+    margin-top: 5%;
   }
-  .corner-menu a{
+  .corner-menu a {
     width: 35px;
     height: 35px;
   }
 
-  .button button{
-  height: 35px;
-  width: 35px;
-  
+  .button button {
+    height: 35px;
+    width: 35px;
   }
-  .pop{
+  .pop {
     margin-left: 35%;
-
   }
-
 }

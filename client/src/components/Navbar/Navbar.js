@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import PopUp from "../../popup/popup";
 import { HashLink as Link } from "react-router-hash-link";
 import { FaArrowRight, FaPhone, FaUser, FaHome, FaTimes } from "react-icons/fa";
@@ -7,36 +7,32 @@ import api_url from "../../config";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [message, setMessage] = useState("");
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // Initialize with false
+
+  useEffect(() => {
+    try {
+      const token = localStorage.getItem("token");
+      if (token === null) {
+        setIsLoggedIn(false); // Update the state with false
+      } else {
+        setIsLoggedIn(true); // Update the state with true
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  }, [isLoggedIn]);
+
+ 
+  const logout = () => {
+    localStorage.removeItem("token");
+    setIsLoggedIn(false);
+    alert("Logged Out Successfully");
+  };
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const logout = async () => {
-
-    try {
-      const token = localStorage.getItem("token");
-
-      const response = await fetch(`${api_url}/logout`, {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-          "Authorization": `Bearer ${token}`, // Send token in headers
-        },
-      });
-      const data = await response.json();
-      setMessage(data.message);
-      console.log(data.message);
-
-      if (response.ok) {
-        localStorage.removeItem("token");
-        alert({ message });
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  };
   return (
     <>
       <link
@@ -47,10 +43,7 @@ const Navbar = () => {
 
       <nav className={styles.NavbarItem}>
         <div className={styles.image}>
-          <img
-            src="Images/logo.png"
-            alt="Logo"
-          />
+          <img src="Images/logo.png" alt="Logo" />
         </div>
         <div className={styles.MenuIcons} onClick={toggleMenu}>
           <i className={isMenuOpen ? "fas fa-times" : "fas fa-bars"}></i>
@@ -100,11 +93,13 @@ const Navbar = () => {
           <Link to="/registration">
             <FaUser />
           </Link>
-          <div className={styles["button"]}>
-            <button onClick={logout}>
-              <FaArrowRight />
-            </button>
-          </div>
+          {isLoggedIn && (
+            <div className={styles["button"]}>
+              <button onClick={logout}>
+                <FaArrowRight />
+              </button>
+            </div>
+          )}
         </div>
       </nav>
     </>
