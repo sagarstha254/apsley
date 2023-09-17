@@ -26,7 +26,7 @@ const Recipe = () => {
               <p>$12</p>
             </div>
             <div>
-              <img src="Images/food.png" alt="Image 1" />
+              <img src="Images/food1.jpg" alt="Image 1" />
             </div>
             <div classname="descripton">
               <h1 className="desh1">Lamb Cutlet</h1>
@@ -43,7 +43,7 @@ const Recipe = () => {
               <p>$12</p>
             </div>
             <div>
-              <img src="Images/food.png" alt="Image 2" />
+              <img src="Images/food1.jpg" alt="Image 2" />
             </div>
             <div classname="descripton">
               <h1 className="desh1"> Broccolini</h1>
