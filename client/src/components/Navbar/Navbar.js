@@ -82,7 +82,7 @@ const Navbar = () => {
           </li>
           <li className={styles.NavLinks}>
             <FaPhone />
-            98104903834
+            +61 449 118 026
           </li>
           <li className={styles.pop}>
             <PopUp />
