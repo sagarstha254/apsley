@@ -14,13 +14,11 @@ router.post(
 
 router.get(
   "/admin/reservations",
-  isAuth(["admin"]),
   reservationController.getReservations
 );
 
 router.get(
   "/admin/reservation/:reservationId",
-  isAuth(["admin"]),
   reservationController.getReservation
 );
 

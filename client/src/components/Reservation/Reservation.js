@@ -1,15 +1,25 @@
 import { useState } from "react";
 import styles from "./Reservation.module.css";
 import FormInput from "./FormInput";
+import api_url from "../../config";
+import { useNavigate } from "react-router-dom";
+import Footer from "../Footer/Footer";
+import Header from "../Navbar/Navbar";
 
 const Registration = () => {
+  const searchParams = new URLSearchParams(window.location.search);
+  const roomId = searchParams.get("roomId");
+  const [message, setMessage] = useState("");
+  const navigate = useNavigate();
+
   const [values, setValues] = useState({
     username: "",
-    email: "",
-    NumberOfGuest: "",
-    ArrivalData: "",
-    DepartureDate: "",
-    SpecialRequest: "",
+    phone: "",
+    guests: "",
+    checkInDate: "",
+    checkOutDate: "",
+    specialRequest: "",
+    roomId,
   });
 
   const inputs = [
@@ -26,50 +36,77 @@ const Registration = () => {
     },
     {
       id: 2,
-      name: "email",
-      type: "email",
-      placeholder: "Email",
-      errorMessage: "It should be a valid email address!",
-      label: "Email",
+      name: "phone",
+      type: "number",
+      placeholder: "Phone",
+      errorMessage: "It should be a valid Phone number!",
+      label: "Phone",
       required: true,
     },
+
     {
       id: 3,
-      name: "Number of Guest",
+      name: "guests",
       type: "number",
       placeholder: "Total number of guest",
-      errorMessage: "It should be a valid email address!",
+      errorMessage: "It should be a valid number!",
       label: "Number of Guest",
       pattern: "[0-9]*",
       required: true,
     },
     {
       id: 4,
-      name: "Arrival Data",
+      name: "checkInDate",
       type: "date",
       placeholder: "Arrival Data",
       label: "ArrivalData",
     },
     {
       id: 5,
-      name: "Departure Data",
+      name: "checkOutDate",
       type: "date",
       placeholder: "Departure Data",
       label: "DepartureData",
     },
     {
       id: 6,
-      name: "Special Request",
+      name: "specialRequest",
       type: "box",
       placeholder: "Any Special request",
-      errorMessage: "It should be a valid email address!",
+      errorMessage: "It should be a valid character!",
       label: "Special request",
       required: true,
     },
   ];
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const token = localStorage.getItem("token");
+    try {
+      const response = await fetch(`${api_url}/reservation`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(values),
+      });
+
+      if(response.status === 401){
+        return navigate("/login")
+      }
+      const data = await response.json();
+      setMessage(data.message);
+
+      setTimeout(() => {
+        navigate("/accommodation"); // Navigate to "/accomodation" after 3 seconds
+      }, 2000);
+
+
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const onChange = (e) => {
@@ -77,20 +114,27 @@ const Registration = () => {
   };
 
   return (
-    <div className={styles.Registration}>
+    <>
+    <Header />
+      <div className={styles.Registration}>
       <form onSubmit={handleSubmit}>
         <h1>Booking Room</h1>
-        {inputs.map((input) => (
+        <h1>{message}</h1>
+        {inputs.map((input)  => (
           <FormInput
             key={input.id}
             {...input}
             value={values[input.name]}
             onChange={onChange}
+            className="input1"
+
           />
         ))}
         <button className={styles.Submit}>Submit</button>
       </form>
     </div>
+    <Footer noLogo />
+    </>
   );
 };
 

@@ -34,7 +34,6 @@ exports.postReservation = async (req, res, next) => {
     const checkInDate = req.body.checkInDate;
     const checkOutDate = req.body.checkOutDate;
     const guests = req.body.guests;
-
     // Create new reservation
     const reservation = new Reservation({
       userId: userId,
@@ -172,7 +171,7 @@ exports.deleteReservation = async (req, res, next) => {
     await Reservation.findByIdAndRemove(reservationId);
 
     //Send response
-    res.status(200).json({ messge: "Reservation deleted." });
+    res.status(200).json({ message: "Reservation Deleted." });
   } catch (err) {
     if (!err.statusCode) {
       err.statusCode = 500;

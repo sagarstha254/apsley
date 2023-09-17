@@ -13,7 +13,7 @@ const fileStorage = multer.diskStorage({
     }
 
     cb(null, destinationPath);
-  },
+  }, 
   filename: (req, file, cb) => {
     cb(null, file.originalname);
   },

@@ -9,7 +9,7 @@ const router = express.Router();
 // Create new product
 router.post(
   "/admin/product",
-  // isAuth(["admin"]),
+  isAuth(["admin"]),
   upload.single("productImage"),
   productController.postProduct
 );
@@ -31,7 +31,7 @@ router.put(
 // Remove a product
 router.delete(
   "/admin/product/:productId",
-  // isAuth(["admin"]),
+  isAuth(["admin"]),
   productController.deleteProduct
 );
 

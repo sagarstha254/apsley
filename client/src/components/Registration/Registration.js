@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import styles from "./Registration.module.css";
+import { useNavigate } from "react-router-dom";
+import api_url from "../../config";
+
 
 function Registration() {
   const [name, setName] = useState("");
@@ -7,6 +10,8 @@ function Registration() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [message, setMessage] = useState("");
+  const navigate = useNavigate();
+
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -19,7 +24,7 @@ function Registration() {
     };
 
     try {
-      const response = await fetch("http://localhost:8081/signup", {
+      const response = await fetch(`${api_url}/signup`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(userData),
@@ -29,6 +34,8 @@ function Registration() {
 
    
       setMessage(data.message);
+      if (response.ok) navigate("/login");
+
     } catch (error) {
       console.error(error);
     }
@@ -37,65 +44,71 @@ function Registration() {
   return (
     <div className={styles.signupcontainer}>
       <div className={styles.slogan}>
-        <h1>Apsley Arms Hotel</h1>
+        <h1 className={styles.title}>Apsley Arms Hotel
         <br />
-        <h1>Connecting your needs......</h1>
+        Connecting your needs......</h1>
       </div>
-      <div className={styles.signupform}>
-        <form onSubmit={handleSubmit}>
-          <h2>Create Account</h2>
+      <div className={styles.container}>
+        <div className={styles.login}>
+          <h1>Create Account</h1>
           <h2>{message}</h2>
-          <div className={styles.formgroup}>
-            <label htmlFor="name">Name:</label>
+          <form className={styles.form1} onSubmit={handleSubmit}>
+            <div className={styles.incontainer}>
+            
             <input
               type="text"
               id="name"
               name="name"
               value={name}
               onChange={(e) => setName(e.target.value)}
-            />
-          </div>
-          <div className={styles.formgroup}>
-            <label htmlFor="email">Email:</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </div>
-          <div className={styles.formgroup}>
-            <label htmlFor="password">Password:</label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
-          <div className={styles.formgroup}>
-            <label htmlFor="confirmPassword">Confirm Password:</label>
-            <input
-              type="password"
-              id="confirmPassword"
-              name="confirmPassword"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-            />
-          </div>
+              />
+              <label htmlFor="name">Name:</label>
+            </div>
+            <div className={styles.incontainer}>
+              
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <label htmlFor="email">Email:</label>
+            </div>
+            <div className={styles.incontainer}>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <label htmlFor="password">Password:</label>
+            </div>
+            <div className={styles.incontainer}>
+              <input
+                type="password"
+                id="confirmPassword"
+                name="confirmPassword"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+              /> 
+              <label htmlFor="confirmPassword">Confirm Password:</label>
+            </div>
 
-          <button type="submit" className={styles.submitbutton}>
-            Create Account
-          </button>
-          <p> or </p>
-          <a href="https://www.google.com">Sign up with Google</a>
-          <a href="https://www.google.com">sign up with facebook</a>
-          <div>
-            Already have an account? <a href="/login">Login</a>
-          </div>
-        </form>
+                <div className={styles.button}>
+                  <button type="submit" className={styles.button}>
+                    Create Account
+                  </button><br /><br />
+                </div> 
+                <div className={styles.link}>
+                <a className={styles.a} href="https://www.google.com">Sign up with Google</a> <br /><br/>
+                <a className={styles.a} href="https://www.facebook.com">Sign up with facebook</a><br/>
+                
+                <p>Already have an account? <a href="/login">Login</a></p>
+              </div>
+          </form>
+        </div>
       </div>
     </div>
   );

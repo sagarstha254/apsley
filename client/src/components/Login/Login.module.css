@@ -1,61 +1,173 @@
 .signupcontainer {
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  width: 100%;
+  background-color: #dae95233;
+}
+
+.container {
+  position: relative;
+  width: 25%;
+  height: 460px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  margin-left: 5%;
+  margin-top: 10%;
+  border-radius: 3%;
+  backdrop-filter: blur(100px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .login {
+  width: 100%;
+}
+
+.login h1 {
+  font-size: 2em;
+  color: black;
+}
+
+.login form {
+  background-color: transparent;
+  height: 300px;
+  width: 100%;
+  border-radius: 0px;
+  border-color: transparent;
+  color: white;
+}
+
+.incontainer {
+  position: relative;
+  width: 100%;
+  height: 70px;
+  margin-top: 30px;
+  margin-left: 8%;
+}
+
+.incontainer label {
+  position: absolute;
+  top: 50%;
+  left: -5%;
+  transform: translateY(-50%);
+  font-size: 1em;
+  color: black;
+  font-weight: 500;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.incontainer input:focus ~ label,
+.incontainer input:valid ~ label {
+  top: -5px;
+}
+
+.incontainer input {
+  margin-top: 3%;
+  margin-left: -30%;
+  width: 80%;
+  height: 44px;
+  background: transparent;
+  background-color: white;
+  border: aliceblue solid 2px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  font-size: 1em;
+  color: black;
+  font-weight: 600;
+}
+
+.forgot {
+  font-size: 0.9em;
+  color: black;
+  font-weight: 500;
+}
+
+.button button {
+  height: 44px;
+  width: 200px;
+  background-color: Black;
+  overflow: hidden;
+  border: solid;
+  border-color: white;
+  color: whitesmoke;
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 400;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+button:hover {
+  background-color: #ddd;
+  color: black;
+  border-color: black;
+}
+
+.slogan {
+  margin-right: 10px;
+  height: 750px;
+  width: 800px;
+  background-image: url("https://media.licdn.com/dms/image/C5603AQH57N3JQ7ph0w/profile-displayphoto-shrink_800_800/0/1651496670385?e=2147483647&v=beta&t=Ul5vEfHq7C8P7xJsjDj3wPW6rf_Lt6mmkib9Ji_E320");
+}
+
+.title {
+  margin-top: 310px;
+  color: whitesmoke;
+  font-size: 60px;
+  font-weight: 600;
+  text-align: left;
+  padding-left: 20px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+.link a {
+  text-decoration: none;
+}
+.button {
+  text-align: center;
+}
+
+@media (max-width: 1200px) {
+  .signupcontainer {
     text-align: center;
     justify-content: center;
-    display: flex;
-    padding: 90px 10px;
+    display: grid;
     width: 100%;
-    background-color: rgb(101, 167, 218);
+    height: 1500px;
+    background-color: #dae95233;
   }
-  
-  .signupform {
-    display: flex;
-    justify-content: center;
-    height: 550px;
-    width: 30%;
-    box-shadow: 1px 2px 3px 2px rgb(207, 207, 207);
-    padding-top: 30px;
-    border-radius: 4px;
-    background-color: transparent blue;
+
+  .container {
+    width: 50%;
+    margin-left: 25%;
   }
-  
-  .formgroup {
-    margin-top: 50px;
-    margin-bottom: 10px;
-    text-align: left;
-    height: 1%;
+}
+@media (max-width: 600px) {
+  .signupcontainer {
+    height: 1000px;
+    background-color: #dae95233;
+
   }
-  
-  label {
-    display: block;
-    font-weight: lighter;
-    margin-top: 5px;
-  }
-  
-  input {
-    width: 100%;
-    padding: 10px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-  }
-  
-  .submitbutton {
-    background-color: #ea0707;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 65px;
-    width: 100%;
-  }
-  
-  .submitbutton:hover {
-    background-color: #007bff;
-  }
-  
+
   .slogan {
-    text-align: center;
     margin-right: 10px;
-    margin-top: 150px;
+    height: 400px;
+    width: 450px;
+    background-size: 100% 100%;
   }
-  
+
+  .title {
+    margin-top: 150px;
+    font-size: 30px;
+    font-weight: 600;
+    padding-left: 30px;
+  }
+
+  .container {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: -10%;
+  }
+}

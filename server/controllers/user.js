@@ -1,9 +1,8 @@
 const { validationResult } = require("express-validator");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-
 const User = require("../models/user");
-
+const { connect } = require("mongoose");
 const errorHandler = require("../middlewares/error-handler");
 
 // Signup new user
@@ -16,7 +15,7 @@ exports.signup = async (req, res, next) => {
       errorHandler(errorMessage, 422);
     }
 
-    console.log(req,'request');
+    console.log(req, "request");
 
     const name = req.body.name;
     const email = req.body.email;
@@ -32,7 +31,7 @@ exports.signup = async (req, res, next) => {
 
     res
       .status(201)
-      .json({ message: "User Created Sucessfully.", userId: result._id});
+      .json({ message: "User Created Sucessfully.", userId: result._id });
   } catch (err) {
     if (!err.statusCode) {
       err.statusCode = 500;
@@ -55,12 +54,16 @@ exports.login = async (req, res, next) => {
     const password = req.body.password;
     const user = await User.findOne({ email: email });
     if (!user) {
-      errorHandler("A user with this email could not be found.", 401);
+      res.status(401).json({
+        message: "A user with this email could not be found.",
+      });
     }
 
     const isEqual = await bcrypt.compare(password, user.password);
     if (!isEqual) {
-      errorHandler("Wrong password. Please enter a correct one.", 401);
+      res.status(401).json({
+        message: "Wrong password. Please enter a correct one.",
+      });
     }
 
     const token = jwt.sign(
@@ -85,6 +88,71 @@ exports.login = async (req, res, next) => {
   }
 };
 
+//Logout User
 exports.logout = (req, res, next) => {
-  //logout
+  try {
+      res.status(200).json({
+      message:"Logged Out Successfully"
+    });
+  } catch (err) {
+    if (!err.statusCode) {
+      err.statusCode = 500;
+    }
+    next(err);
+  }
+  
+};
+
+//Fetch User
+exports.getuser = async (req, res, next) => {
+  try {
+    //Extract query param for pagination
+    const currentPage = req.query.page || 1;
+    const perPage = 5;
+    const totalUser = await User.countDocuments();
+
+    //Fetch all userdata
+    const users = await User.find()
+      .skip((currentPage - 1) * perPage)
+      .limit(perPage);
+
+    if (!users) {
+      return errorHandler("No user registered yet.", 404);
+    }
+
+    // Send response
+    res.status(200).json({
+      message: "User fetched successfully.",
+      users: users,
+      totalUser: totalUser,
+    });
+  } catch (err) {
+    if (!err.statusCode) {
+      err.statusCode = 500;
+    }
+    next(err);
+  }
+};
+
+//Delete a customer
+exports.deleteUser = async (req, res, next) => {
+  try {
+    //Fetch the customer
+    const userId = req.params.userId;
+    const user = await User.findById(userId);
+
+    if (!user) {
+      errorHandler("Could not find User.", 404);
+    }
+    //Remove the customer
+    await User.findByIdAndRemove(userId);
+
+    //Send response
+    res.status(200).json({ message: "User Data deleted." });
+  } catch (err) {
+    if (!err.statusCode) {
+      err.statusCode = 500;
+    }
+    next(err);
+  }
 };

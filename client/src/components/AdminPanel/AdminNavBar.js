@@ -24,6 +24,11 @@ const AdminNavBar = () => {
             <Link to="/adminCustomers">Customers</Link>
           </li>
         </ul>
+        <ul>
+          <li>
+            <Link to="/adminRoom">Rooms</Link>
+          </li>
+        </ul>
       </div>
     </nav>
   );

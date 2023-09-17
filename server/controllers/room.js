@@ -3,6 +3,7 @@ const { validationResult } = require("express-validator");
 const Room = require("../models/room");
 const errorHandler = require("../middlewares/error-handler");
 const clearImage = require("../utils/clear-image");
+const { connect } = require("mongoose");
 
 // Create new room
 exports.postRoom = async (req, res, next) => {
@@ -13,20 +14,20 @@ exports.postRoom = async (req, res, next) => {
       const errorMessage = errors.array()[0].msg;
       errorHandler(errorMessage, 422);
     }
-    if (!req.file) {
+    if (!req.file.filename) {
       errorHandler("No image provided", 422);
     }
 
     // Extract input data
-    const name = req.body.name;
+    const number = req.body.number;
     const description = req.body.description;
     const roomType = req.body.roomType;
     const price = req.body.price;
-    const image = req.file.path;
+    const image = req.file.filename;
 
     // Create new room
     const room = new Room({
-      name: name,
+      number: number,
       description: description,
       roomType: roomType,
       price: price,
@@ -35,7 +36,6 @@ exports.postRoom = async (req, res, next) => {
 
     // Save the created room
     const result = await room.save();
-    console.log(result);
 
     // Send response
     res
@@ -95,15 +95,15 @@ exports.updateRoom = async (req, res, next) => {
     }
 
     // Extract input data
-    const roomId = req.params.roomId;
-    const name = req.body.name;
+    const roomId = req.body.roomId;
+    const number = req.body.number;
     const description = req.body.description;
-    const roomType = req.file.roomType;
+    const roomType = req.body.roomType;
     const price = req.body.price;
-    let image = req.body.image;
+    let image = req.file.filename;
 
-    if (req.file) {
-      image = req.file.path;
+    if (req.file.filename) {
+      image = req.file.filename;
     }
     if (!image) {
       errorHandler("No file picked.", 422);
@@ -118,7 +118,8 @@ exports.updateRoom = async (req, res, next) => {
       clearImage(room.image);
     }
     // Update room details
-    room.name = name;
+
+    room.number = number;
     room.description = description;
     room.roomType = roomType;
     room.price = price;
@@ -153,7 +154,7 @@ exports.deleteRoom = async (req, res, next) => {
     await Room.findByIdAndRemove(roomId);
 
     //Send response
-    res.status(200).json({ messge: "Room deleted." });
+    res.status(200).json({ message: "Room deleted." });
   } catch (err) {
     if (!err.statusCode) {
       err.statusCode = 500;
