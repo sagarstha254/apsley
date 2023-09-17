@@ -55,7 +55,7 @@ const Navbar = () => {
           }
         >
           <li>
-            <Link className={styles.NavLinks} smooth to="/">
+            <Link className={styles.NavLinks} smooth to="/#">
               <FaHome />
               Home
             </Link>
