@@ -34,7 +34,7 @@ const About = () => {
           <div className="price">
             <p>$12</p>
           </div>
-          <div><img src="Images/drink.jpg" alt="Image 2" /></div>
+          <div><img src="Images/drink1.jpg" alt="Image 2" /></div>
           <div classname="descripton">
 
             <h1 className="desh1">Signature</h1>
@@ -48,7 +48,7 @@ const About = () => {
           <div className="price">
             <p>$12</p>
           </div>
-          <div><img src="Images/drink.jpg" alt="Image 3" /></div>
+          <div><img src="Images/drink2.jpg" alt="Image 3" /></div>
           <div classname="descripton">
 
             <h1 className="desh1">Signature</h1>
@@ -63,7 +63,7 @@ const About = () => {
           <div className="price">
               <p>$12</p>
             </div>
-            <div><img src="Images/drink.jpg" alt="Image 4" /></div>
+            <div><img src="Images/drink3.jpg" alt="Image 4" /></div>
             <div classname="descripton">
 
               <h1 className="desh1">Signature</h1>
