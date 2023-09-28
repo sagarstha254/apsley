@@ -13,6 +13,7 @@
   left: 50%;
   transform: translate(-50%);
   z-index: 9999;
+
 }
 .image img {
   height: 60px;
@@ -22,7 +23,7 @@
 .Navmenu {
   display: grid;
   grid-template-columns: repeat(7, auto);
-  grid-gap: 10px;
+  grid-gap: 1px;
   list-style: none;
   align-items: center;
 }
@@ -57,7 +58,7 @@
   display: flex;
   justify-content: space-between;
   margin-right: 30px;
-  margin-top: 2%;
+  margin-top: 1%;
 }
 
 .corner-menu a {
@@ -135,6 +136,7 @@
   }
   .NavbarItem {
     z-index: 99;
+
   }
   .MenuIcons {
     display: block;

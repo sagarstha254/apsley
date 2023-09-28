@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PopUp from "../../popup/popup";
 import { HashLink as Link } from "react-router-hash-link";
-import { FaArrowRight, FaPhone, FaUser, FaHome, FaTimes } from "react-icons/fa";
+import { FaArrowRight, FaPhoneAlt, FaUser, FaHome, FaTimes } from "react-icons/fa";
 import styles from "./Navbar.module.css";
 import api_url from "../../config";
 
@@ -81,7 +81,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li className={styles.NavLinks}>
-            <FaPhone />
+            <FaPhoneAlt />
             +61 449 118 026
           </li>
           <li className={styles.pop}>
