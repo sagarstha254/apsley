@@ -51,7 +51,7 @@
 
 .incontainer label {
   position: absolute;
-  left: 3%;
+  left: 10%;
   top: 50%;
   transform: translateY(-50%);
   font-size: 1em;
@@ -68,7 +68,7 @@
 
 .incontainer input {
   margin-top: 3%;
-  margin-left: -15%;
+ 
   width: 80%;
   height: 44px;
   background: transparent;

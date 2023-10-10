@@ -12,7 +12,7 @@
   padding-top: 80px;
 
   width: 50%;
-  margin-left: 130px;
+  
 }
 
 .h1 {
@@ -25,11 +25,15 @@
 .content {
   color: black;
   text-align: center;
-  width: 100%;
+  width: 60%;
+  margin-left: 20%;
+}
+
+.photo{width: 50%;
 }
 
 .photo img {
-  float: right;
+  
   height: 514px;
   margin-top: 100px;
   width: 475px;
@@ -134,7 +138,7 @@
 }
 @media (max-width: 800px) {
   .hotel {
-    height: 2250px;
+    height: 2350px;
   }
   .h2 {
     margin-top: 3%;
@@ -142,8 +146,43 @@
 }
 @media (max-width: 600px) {
  
-
+  .main{height:850px ;}
   .title {
     padding: 10px;
+  }
+  .photo {
+   
+    height: 375px;
+    margin-top: 20px;
+    width: 100%;
+   
+  
+  }
+  .photo img{
+    height: 275px;
+    margin-top: 70px;
+    width: 275px;
+    border-radius: 238px;
+  }
+
+  .h2{font-size:50px ;}
+  .h3{font-size:xx-large ;}
+}
+
+@media (max-width: 400px) {
+  .main{height:900px ;}
+
+  .hotel {
+    height: 2100px;
+  }
+
+  .h1 {
+    font-size: x-large;
+  }
+  .h2{font-size:40px ;}
+  .h3{font-size:x-large ;}
+  
+  .content p{
+    font-size: medium;
   }
 }

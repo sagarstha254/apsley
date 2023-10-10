@@ -8,18 +8,18 @@ const About = () => {
     <div className={styles.main} id="about"> 
       <div className={styles.position}>
         <div className={styles.Heading}>
-          <div>
+          <div >
             <h1 className={styles.h1}>Our Apsley Arms Hotel<br />
               Expert kitchen Chef</h1>
           </div>
 
           <div className={styles.content}>
             <p>
-              Food, substance consisting essentially of<br></br>
-              protein, carbohydrate, fat, and other nutrients<br></br> 
-              used in the body of an organism to sustain<br></br> growth and vital processes and to furnish energy.<br></br>
-               The absorption and utilization of food<br></br>
-                by the body is fundamental to nutrition and is<br></br>
+              Food, substance consisting essentially of
+              protein, carbohydrate, fat, and other nutrients
+              used in the body of an organism to sustain growth and vital processes and to furnish energy.
+               The absorption and utilization of food
+                by the body is fundamental to nutrition and is
                  facilitated by digestion.
             </p>
             <button class={styles.contactbtn}>Contact us</button>

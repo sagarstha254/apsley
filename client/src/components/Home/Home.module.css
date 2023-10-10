@@ -10,6 +10,7 @@
   align-items: center;
   justify-content: space-between;
   height: 100%;
+  width: 100%;
   padding: 0 2rem;
 }
 .bigSvg {
@@ -88,7 +89,7 @@ font-weight: bold;
 
 
 .border{
-position: absolute;
+  position: absolute;
   top: -8%;
   left: 45%;
   width: 800px;
@@ -97,13 +98,18 @@ position: absolute;
   border: 3px solid #DAE952;}
 
 .image1 {
-width: 710px;
-height: 583px;
-border-radius: 291.5px;
-position: absolute;
+  width: 50%;
+  position: absolute;
+  left:50%;
 
-left:50%
 }
+
+.image1 img {
+  width: 90%;
+  height: 550px;
+
+}
+
 .firstSvg {
   width: 54px;
   height: 39px;
@@ -162,7 +168,7 @@ left:50%
   right:2%
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
 
   .content {
     display: grid;
@@ -179,7 +185,8 @@ left:50%
     
   }
 
-  .image1 img {width:100% ;}
+  .image1 img {width:100% ;
+    height: 400px;}
 
   .bigSvg {
     width: 666px;
@@ -226,11 +233,11 @@ left:50%
   }
     
   .slogan1{
+    width: 80%;
     top: 16%;
-    left: 24%;
+    text-align: center;
   }
   .button {
-  
     margin: 0 auto;
     position: absolute;
     top: 33%;
@@ -253,6 +260,28 @@ left:50%
     top:64%;
     left:60%
   }
+}@media screen and (max-width: 800px) {
+
+
+  .title {
+    width: 80%;
+    color: #000;
+    font-size: 50px;
+    top: 7%;
+      
+  }
+
+  .slogan1{
+    top: 18%;
+    font-size: larger;
+   
+  }
+  .slogan {
+    width: 80%;
+    font-size: medium;
+    top: 25%;
+      
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -267,7 +296,7 @@ left:50%
     fill: #dae952;
     position: absolute;
     top: 70%;
-    right: 20.7%;
+    right: 17%;
     z-index: -1;
   }
 
@@ -280,6 +309,8 @@ left:50%
     left:10%;
     
     }
+    .image1 img {width:100% ;
+      height: 250px;}
 
   .border{
       
@@ -298,28 +329,20 @@ left:50%
   .title {
     width: 80%;
     color: #000;
-    font-family: Inter;
-    font-size: 78px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    position: absolute;
-    top: 5%;
+    font-size: xx-large;
+    top: 10%;
       
   }
 
   .slogan1{
-    top: 23%;
-    left: 10%;
+    top: 18%;
+    font-size: larger;
+   
   }
   .slogan {
     width: 80%;
-    font-family: 'Inter', sans-serif;
-    font-size: 1.5rem;
-    color: #555;
-    text-align: center;
-    position: absolute;
-    top: 33%;
+    font-size: medium;
+    top: 25%;
       
   }
   
@@ -327,7 +350,7 @@ left:50%
   
     margin: 0 auto;
     position: absolute;
-    top: 40%;
+    top: 37%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
@@ -346,4 +369,19 @@ left:50%
     top:78%;
     left:10%
   }
+}
+
+@media screen and (max-width: 500px) {
+  .bigSvg {
+  
+  right: 20%;
+}
+
+}
+@media screen and (max-width: 400px) {
+  .bigSvg {
+  
+  right: 25%;
+ 
+}
 }

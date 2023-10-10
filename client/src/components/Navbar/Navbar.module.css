@@ -159,13 +159,13 @@
   .MenuIcons {
     display: block;
     cursor: pointer;
-    margin-right: -130%;
+    margin-right: -108%;
   }
   .corner-menu {
     display: flex;
     justify-content: space-between;
     margin-right: 60px;
-    margin-top: 5%;
+    margin-top: 1%;
   }
   .corner-menu a {
     width: 35px;

@@ -26,7 +26,7 @@ const About = () => {
             <div classname="descripton">
               <h1 className="desh1">Signature</h1>
 
-              <p>
+              <p className="des">
                 You can enjoy the taste of sweet oaks, fruit, and fading caramel
                 hints in the Signature Liquor brand.
               </p>
@@ -43,7 +43,7 @@ const About = () => {
             <div classname="descripton">
               <h1 className="desh1">Blue Label</h1>
 
-              <p>
+              <p className="des">
                 Blue Label is an unrivalled masterpiece. An exquisite blend made
                 from some of Scotland's rarest and most exceptional whiskies.{" "}
               </p>
@@ -59,7 +59,7 @@ const About = () => {
             <div classname="descripton">
               <h1 className="desh1">Red Label</h1>
 
-              <p>
+              <p className="des"> 
                 Red Label is the quintessential Scotch. Enjoy neat, over ice or
                 with your favourite mixer. A must for every bar.{" "}
               </p>
@@ -76,7 +76,7 @@ const About = () => {
             <div classname="descripton">
               <h1 className="desh1">Jack Daniels</h1>
 
-              <p>
+              <p className="des">
                 Jack Daniels whiskey is created in the “sour mash manner”
                 popular in Tennessee.
               </p>

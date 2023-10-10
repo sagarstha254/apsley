@@ -165,17 +165,18 @@ body {
   position: relative;
   text-align: center;
 }
-
+.first{width: 50%;}
 .first img {
   height: 515px;
-  width: 100%;
+  width: 110%;
   border-radius: 258px;
 }
 
 .second {
   text-align: center;
   margin-top: 5%;
-  margin-left: 6%;
+  width: 50%;
+  margin-left: 5%;
 }
 
 .second h1 {
@@ -189,7 +190,7 @@ body {
   font-weight: 400;
 }
 
-.button {
+.pbutton {
   background-color: #dae952;
   color: #333;
   border: none;
@@ -198,7 +199,7 @@ body {
   width: 229px;
   height: 58px;
   position: absolute;
-  right: 8%;
+  right: 11%;
   font-family: "Inter", sans-serif;
   font-size: 16px;
   font-weight: bold;
@@ -208,19 +209,31 @@ body {
   background-color: #f2f2f2;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1300px) {
   .inner {
     display: grid;
   }
+  .first{width: 100%;}
+
+
+  .second {
+    text-align: center;
+   margin-left: 0%;
+    width: 100%;
+    
+  }
+  
   .main {
     height: 1900px;
   }
+  .first{margin-top: 5%;}
 
-  .button {
-    left: 48%;
+  .pbutton {
+    left: 42%;
   }
 
   .first img {
+    width: 90%;
     border-radius: 48%;
   }
 
@@ -248,6 +261,7 @@ body {
   .main {
     height: 3400px;
   }
+
   .recipe {
     margin-top: 10%;
     padding-left: 30%;
@@ -277,7 +291,7 @@ body {
     width: 60%;
     border-radius: 50px 0px 50px 0px;
   }
-
+  .first{margin-top: -20%;}
   .first img {
     height: 450px;
     width: 100%;
@@ -289,6 +303,28 @@ body {
 }
 
 @media (max-width: 600px) {
+  .main {
+    height: 3000px;
+  }
+
+  .header {
+    padding: 2px;
+  }
+
+  .h1{font-size: x-large;}
+  .h2{font-size: x-large;}
+  .p{font-size: medium;}
+
+  .desh1 {font-size:x-large;}
+  .des{font-size:small;}
+  
+ 
+
+  .recipe{
+    align-items: center;
+    padding: none;
+  }
+
   .rec1 img {
     height: 170px;
     width: 170px;
@@ -303,9 +339,90 @@ body {
     height: 170px;
     width: 170px;
   }
+  .first img {
+    height: 250px;
+    width: 280px;
+  }
 
   .rec4 img {
     height: 170px;
     width: 170px;
   }
+  .secondSvg {left: 90%;}
+
+  
+  .rec1 {
+    height: 400px;
+    width: 60%;
+  }
+
+  .rec2 {
+    height: 400px;
+    width: 60%;
+    border-radius: 50px 0px 50px 0px;
+  }
+
+  .rec3 {
+    height: 400px;
+    width: 60%;
+  }
+
+  .rec4 {
+    height: 400px;
+    width: 60%;
+    border-radius: 50px 0px 50px 0px;
+  }
+
+
+  .second h1 {
+    font-size: xx-large;
+  }
+  
+  .second p {
+    font-size: medium;
+    
+  }
+  .pbutton {
+    left: 35%;
+    
+ 
+
+  }
+
+}
+@media (max-width: 400px) {
+  .pbutton {
+    left: 27%;
+  }
+  .recipe{
+    
+    margin-left: -6%;
+  }
+
+  .rec1 {
+    height: 400px;
+    width: 75%;
+  }
+
+  .rec2 {
+    height: 400px;
+    width: 75%;
+    border-radius: 50px 0px 50px 0px;
+  }
+
+  .rec3 {
+    height: 400px;
+    width: 75%;
+  }
+
+  .rec4 {
+    height: 400px;
+    width: 75%;
+    border-radius: 50px 0px 50px 0px;
+  }
+
+  .second h1 {
+    font-size: x-large;
+  }
+
 }

@@ -31,7 +31,7 @@ const Recipe = () => {
             <div classname="descripton">
               <h1 className="desh1">Lamb Cutlet</h1>
 
-              <p>
+              <p className="des">
                 Lamb Cutlets’ with beetroot purée miso paste, pestoand mash by
                 Chef Sammy.
               </p>
@@ -40,7 +40,7 @@ const Recipe = () => {
 
           <div className="rec2">
             <div className="price">
-              <p>$12</p>
+              <p >$12</p>
             </div>
             <div>
               <img src="Images/food1.jpg" alt="Image 2" />
@@ -48,7 +48,7 @@ const Recipe = () => {
             <div classname="descripton">
               <h1 className="desh1"> Broccolini</h1>
 
-              <p>
+              <p className="des">
                 Broccolini is milder and sweeter than broccoli, with firm,
                 crunchy stems, and leafy florets{" "}
               </p>
@@ -64,7 +64,7 @@ const Recipe = () => {
             <div classname="descripton">
               <h1 className="desh1">Fish Salad</h1>
 
-              <p>
+              <p className="des">  
                 Food is any substance consumed by an organism for nutritional
                 support.{" "}
               </p>
@@ -81,7 +81,7 @@ const Recipe = () => {
             <div classname="descripton">
               <h1 className="desh1">Pizza</h1>
 
-              <p>
+              <p className="des">
                 Food is any substance consumed by an organism for nutritional
                 support.
               </p>
@@ -115,16 +115,16 @@ const Recipe = () => {
               </b>
             </h1>
             <p>
-              The Apsley Arms Hotel is a charming and<br></br> luxurious
-              establishment located in the heart of<br></br> a picturesque
-              countryside. Nestled amidst <br></br>rolling hills and surrounded
-              by lush greenery,<br></br> this hotel offers a serene and idyllic
-              retreat for<br></br> travelers seeking both relaxation and{" "}
+              The Apsley Arms Hotel is a charming and luxurious
+              establishment located in the heart of a picturesque
+              countryside. Nestled amidst rolling hills and surrounded
+              by lush greenery, this hotel offers a serene and idyllic
+              retreat for travelers seeking both relaxation and{" "}
               <br></br>adventure.
             </p>
             <br />
             <Link to="/product">
-              <button className="button">Find more</button>
+              <button className="pbutton">Find more</button>
             </Link>
           </div>
           <svg
