@@ -390,7 +390,7 @@ body {
   }
 
 }
-@media (max-width: 400px) {
+@media (max-width: 425px) {
   .pbutton {
     left: 27%;
   }
@@ -400,29 +400,58 @@ body {
   }
 
   .rec1 {
-    height: 400px;
+    height: 370px;
     width: 75%;
   }
 
   .rec2 {
-    height: 400px;
+    height: 370px;
     width: 75%;
     border-radius: 50px 0px 50px 0px;
   }
 
   .rec3 {
-    height: 400px;
+    height: 370px;
     width: 75%;
   }
 
   .rec4 {
-    height: 400px;
+    height: 370px;
     width: 75%;
     border-radius: 50px 0px 50px 0px;
   }
+  .rec1 img {
+    height: 150px;
+    width: 150px;
+  }
 
+  .rec2 img {
+    height: 150px;
+    width: 150px;
+  }
+
+  .rec3 img {
+    height: 150px;
+    width: 150px;
+  }
+  .first img {
+    height: 250px;
+    width: 280px;
+  }
+
+  .rec4 img {
+    height: 170px;
+    width: 170px;
+  }
   .second h1 {
     font-size: x-large;
   }
 
+
+  .desh1 {font-size:large;}
+  .des{font-size:x-small;}
+}
+@media (max-width: 900px) {
+
+  .des{font-size:11px;}
 }

@@ -169,7 +169,7 @@
   .h3{font-size:xx-large ;}
 }
 
-@media (max-width: 400px) {
+@media (max-width: 425px) {
   .main{height:900px ;}
 
   .hotel {

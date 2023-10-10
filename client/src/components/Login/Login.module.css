@@ -104,13 +104,13 @@ button:hover {
   background-color: #ddd;
   color: black;
   border-color: black;
+  
 }
 
 .slogan {
-  margin-right: 10px;
-  height: 750px;
-  width: 800px;
-  background-image: url("../../../public/Images/reg1.jpg");
+  height: 740px;
+  width: 60%;
+  background-image: url("..//../../public/Images/reg1.jpg");
 }
 
 .title {
@@ -152,7 +152,7 @@ button:hover {
   }
 
   .slogan {
-    margin-right: 10px;
+    
     height: 400px;
     width: 450px;
     background-size: 100% 100%;
@@ -169,5 +169,25 @@ button:hover {
     width: 80%;
     margin-left: 10%;
     margin-top: -10%;
+  }
+}
+
+@media (max-width: 425px) {
+  .signupcontainer {
+    height: 1000px;
+    background-color: #dae95233;
+
+  }
+
+  
+  .container {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: -8%;
+  }
+
+ 
+  .slogan {
+    width: 100%;
   }
 }

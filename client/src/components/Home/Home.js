@@ -35,7 +35,7 @@ const Home = () => {
               Since 1849
             </h2>
 
-            <h2 className={styles.slogan}>Enjoy luxury and comfort</h2><br />
+            <h2 className={styles.slogan}>Enjoy luxury and comfort<br /></h2><br />
             <Link smooth to="/#recipe">
               <button className={styles.button}>Find For More</button>
             </Link>

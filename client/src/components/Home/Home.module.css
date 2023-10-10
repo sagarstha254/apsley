@@ -374,9 +374,13 @@ font-weight: bold;
 @media screen and (max-width: 500px) {
   .bigSvg {
   
-  right: 20%;
+  right: 20%;}
 }
-
+@media screen and (max-width: 425px) {
+  .bigSvg {
+  
+  right: 23.5%;
+}
 }
 @media screen and (max-width: 400px) {
   .bigSvg {
@@ -384,4 +388,17 @@ font-weight: bold;
   right: 25%;
  
 }
+
+.slogan1{
+  top: 18%;
+  font-size: medium; 
+}
+}
+
+@media screen and (max-width: 400px){
+  .bigSvg {
+  
+    right: 28%;
+   
+  }
 }

@@ -74,7 +74,7 @@
   background: transparent;
   background-color: white;
   border: transparent solid 2px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   font-size: 1em;
   color: black;
   font-weight: 600;
@@ -129,9 +129,9 @@ button:hover {
 }
 
 .slogan {
-  margin-right: 10px;
-  height: 750px;
-  width: 800px;
+  
+  height: 740px;
+  width: 60%;
   background-image: url("..//../../public/Images/reg1.jpg");
 }
 
@@ -147,9 +147,6 @@ button:hover {
 
 @media (max-width: 1200px) {
   .signupcontainer {
-    background-color: #dae95233;
-    text-align: center;
-    justify-content: center;
     display: grid;
     width: 100%;
     height: 1500px;
@@ -159,18 +156,16 @@ button:hover {
     width: 50%;
     margin-left: 25%;
   }
+  .slogan {
+    width: 100%;
+  }
 }
 @media (max-width: 600px) {
-  .signupcontainer {
-    height: 1200px;
-    background-color: #dae95233;
-
-  }
+  
 
   .slogan {
-    margin-right: 10px;
     height: 400px;
-    width: 450px;
+    width: 100%;
     background-size: 100% 100%;
   }
 
@@ -185,5 +180,26 @@ button:hover {
     width: 90%;
     margin-left: 6%;
     margin-top: -10%;
+  }
+}
+
+@media (max-width: 425px) {
+
+  .signupcontainer {
+    height: 1200px;
+    background-color: #dae95233;
+
+  }
+
+  
+  .container {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: -10%;
+  }
+
+  
+  .slogan {
+    width: 100%;
   }
 }
