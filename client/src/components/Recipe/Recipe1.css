@@ -385,11 +385,11 @@ body {
   .pbutton {
     left: 35%;
     
- 
+  }
 
   }
 
-}
+
 @media (max-width: 425px) {
   .pbutton {
     left: 27%;
@@ -434,15 +434,17 @@ body {
     height: 150px;
     width: 150px;
   }
+
+  .rec4 img {
+    height: 150px;
+    width: 150px;
+  }
   .first img {
     height: 250px;
     width: 280px;
   }
 
-  .rec4 img {
-    height: 170px;
-    width: 170px;
-  }
+  
   .second h1 {
     font-size: x-large;
   }

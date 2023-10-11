@@ -37,7 +37,7 @@ form h1 {
 form h1 + h1 {
   font-size: 18px;
   color: #f00; /* Adjust the color as needed */
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 /* Style the individual form inputs */
@@ -80,4 +80,42 @@ form h1 + h1 {
   background-color: white;
   color: black;
   border-color: #4e8445;
+}
+
+
+@media screen and (max-width: 730px) {
+
+  .Registration {
+    height: 140vh;
+    
+    
+  }
+  .Registration form {
+    display: grid;
+    grid-template-columns: none;
+    margin-top: 0%;
+    width: 380px;
+    height: 900px;
+    backdrop-filter: blur(2px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  }
+
+  .Submit {
+    margin-left: 12%;
+  }
+  
+
+}
+
+@media screen and (max-width: 425px) {
+
+  .Registration {
+    height: 120vh;
+    
+    
+  }
+  .Registration form {
+    display: grid;
+    
+  }
 }

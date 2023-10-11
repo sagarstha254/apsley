@@ -43,7 +43,7 @@ export const Products = () => {
 
                     <div className={styles.book}>
                       <button className={styles.button}>
-                        Order at Phone
+                        Call to Order
                       </button>
                     </div>
                   </div>
