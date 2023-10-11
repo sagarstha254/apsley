@@ -451,7 +451,7 @@ body {
   .desh1 {font-size:large;}
   .des{font-size:x-small;}
 }
-@media (max-width: 900px) {
+@media (max-width: 950px) {
 
-  .des{font-size:11px;}
+  .des{font-size:12px;}
 }
