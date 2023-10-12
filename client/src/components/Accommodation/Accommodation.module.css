@@ -221,7 +221,7 @@
     width: 50%;
     height: 300px;
     text-align: left;
-    font-size: 4px;
+    font-size: x-small;
   }
 
   .desc p{height: 190px;}
